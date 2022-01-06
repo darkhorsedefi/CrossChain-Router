@@ -2,21 +2,13 @@
 package bridge
 
 import (
-	"math/big"
-
 	"github.com/anyswap/CrossChain-Router/v3/log"
 	"github.com/anyswap/CrossChain-Router/v3/mpc"
 	"github.com/anyswap/CrossChain-Router/v3/params"
 	"github.com/anyswap/CrossChain-Router/v3/router"
 	"github.com/anyswap/CrossChain-Router/v3/rpc/client"
 	"github.com/anyswap/CrossChain-Router/v3/tokens"
-	"github.com/anyswap/CrossChain-Router/v3/tokens/eth"
 )
-
-// NewCrossChainBridge new bridge
-func NewCrossChainBridge(*big.Int) tokens.IBridge {
-	return eth.NewCrossChainBridge()
-}
 
 // InitRouterBridges init router bridges
 func InitRouterBridges(isServer bool) {

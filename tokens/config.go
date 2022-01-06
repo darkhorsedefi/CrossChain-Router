@@ -1,15 +1,12 @@
 package tokens
 
 import (
-	"crypto/ecdsa"
 	"errors"
 	"fmt"
 	"math/big"
-	"strings"
 
 	"github.com/anyswap/CrossChain-Router/v3/common"
 	"github.com/anyswap/CrossChain-Router/v3/log"
-	"github.com/anyswap/CrossChain-Router/v3/tools/crypto"
 )
 
 // ChainConfig struct
@@ -93,6 +90,11 @@ func (c *TokenConfig) CheckConfig() error {
 	return nil
 }
 
+// IsStandardTokenVersion is standard token version
+func (c *TokenConfig) IsStandardTokenVersion() bool {
+	return c.ContractVersion > 0 && c.ContractVersion <= 10000
+}
+
 // SetUnderlying set underlying
 func (c *TokenConfig) SetUnderlying(underlying common.Address) {
 	c.underlying = underlying
@@ -134,27 +136,6 @@ func (c *SwapConfig) CheckConfig() error {
 	}
 	if c.SwapFeeRatePerMillion == 0 && c.MinimumSwapFee.Sign() > 0.0 {
 		return errors.New("wrong token config, MinimumSwapFee should be 0 if SwapFeeRatePerMillion is 0")
-	}
-	return nil
-}
-
-// VerifyMPCPubKey verify mpc address and public key is matching
-func VerifyMPCPubKey(mpcAddress, mpcPubkey string) error {
-	if !common.IsHexAddress(mpcAddress) {
-		return fmt.Errorf("wrong mpc address '%v'", mpcAddress)
-	}
-	pkBytes := common.FromHex(mpcPubkey)
-	if len(pkBytes) != 65 || pkBytes[0] != 4 {
-		return fmt.Errorf("wrong mpc public key '%v'", mpcPubkey)
-	}
-	pubKey := ecdsa.PublicKey{
-		Curve: crypto.S256(),
-		X:     new(big.Int).SetBytes(pkBytes[1:33]),
-		Y:     new(big.Int).SetBytes(pkBytes[33:65]),
-	}
-	pubAddr := crypto.PubkeyToAddress(pubKey)
-	if !strings.EqualFold(pubAddr.String(), mpcAddress) {
-		return fmt.Errorf("mpc address %v and public key address %v is not match", mpcAddress, pubAddr.String())
 	}
 	return nil
 }

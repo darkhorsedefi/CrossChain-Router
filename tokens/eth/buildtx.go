@@ -22,6 +22,9 @@ var (
 
 // BuildRawTransaction build raw tx
 func (b *Bridge) BuildRawTransaction(args *tokens.BuildTxArgs) (rawTx interface{}, err error) {
+	if args.ToChainID.String() != b.ChainConfig.ChainID {
+		return nil, tokens.ErrToChainIDMismatch
+	}
 	if args.Input != nil {
 		return nil, fmt.Errorf("forbid build raw swap tx with input data")
 	}
