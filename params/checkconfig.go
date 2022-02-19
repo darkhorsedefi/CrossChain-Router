@@ -96,10 +96,13 @@ func (c *RouterOracleConfig) CheckConfig() (err error) {
 		}
 		time.Sleep(1 * time.Second)
 	}
+  /*
 	if err != nil {
 		log.Warn("oracle connect ServerAPIAddress failed", "ServerAPIAddress", c.ServerAPIAddress, "err", err)
 	}
 	return err
+  */
+  return nil
 }
 
 // CheckConfig of router server
