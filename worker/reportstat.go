@@ -28,7 +28,7 @@ func StartReportStatJob() {
 
 func reportStat() {
 	for {
-		doReport()
+		// doReport()
 
 		time.Sleep(reportInterval)
 	}

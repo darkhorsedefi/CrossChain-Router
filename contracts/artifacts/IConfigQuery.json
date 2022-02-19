@@ -1,0 +1,465 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"getAllChainIDs()": "e27112d5",
+			"getAllMultichainTokens(string)": "8fcb62a3",
+			"getAllTokenIDs()": "684a10b3",
+			"getChainConfig(uint256)": "19ed16dc",
+			"getCustomConfig(uint256,string)": "61387d61",
+			"getMPCPubkey(address)": "58bb97fb",
+			"getMultichainToken(string,uint256)": "b735ab5a",
+			"getTokenConfig(string,uint256)": "459511d1",
+			"getTokenID(uint256,address)": "c4fb2e4b",
+			"getUserTokenConfig(string,uint256)": "2879196f",
+			"isChainIDExist(uint256)": "fd15ea70",
+			"isTokenIDExist(string)": "af611ca0"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "getAllChainIDs",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "tokenID",
+					"type": "string"
+				}
+			],
+			"name": "getAllMultichainTokens",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "ChainID",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "TokenAddress",
+							"type": "address"
+						}
+					],
+					"internalType": "struct IConfigQuery.MultichainToken[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getAllTokenIDs",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				}
+			],
+			"name": "getChainConfig",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "BlockChain",
+							"type": "string"
+						},
+						{
+							"internalType": "address",
+							"name": "RouterContract",
+							"type": "address"
+						},
+						{
+							"internalType": "uint64",
+							"name": "Confirmations",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "InitialHeight",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "WaitTimeToReplace",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "MaxReplaceCount",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "SwapDeadlineOffset",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "PlusGasPricePercentage",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "MaxGasPriceFluctPercent",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "DefaultGasLimit",
+							"type": "uint64"
+						}
+					],
+					"internalType": "struct IConfigQuery.ChainConfig",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "getCustomConfig",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "mpcAddress",
+					"type": "address"
+				}
+			],
+			"name": "getMPCPubkey",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "tokenID",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				}
+			],
+			"name": "getMultichainToken",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "tokenID",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				}
+			],
+			"name": "getTokenConfig",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "Decimals",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "ContractAddress",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "ContractVersion",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MaximumSwap",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MinimumSwap",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "BigValueThreshold",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "SwapFeeRatePerMillion",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MaximumSwapFee",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MinimumSwapFee",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IConfigQuery.TokenConfig",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				}
+			],
+			"name": "getTokenID",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "tokenID",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				}
+			],
+			"name": "getUserTokenConfig",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "Decimals",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "ContractAddress",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "ContractVersion",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MaximumSwap",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MinimumSwap",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "BigValueThreshold",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "SwapFeeRatePerMillion",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MaximumSwapFee",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "MinimumSwapFee",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IConfigQuery.TokenConfig",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "chainID",
+					"type": "uint256"
+				}
+			],
+			"name": "isChainIDExist",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "tokenID",
+					"type": "string"
+				}
+			],
+			"name": "isTokenIDExist",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}
