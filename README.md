@@ -18,7 +18,7 @@ deploy a `AnyswapERC20` contract for each token on each blockchain
 ## 3. deploy `RouterConfig`
 
 deploy a `RouterConfig` contract to store router bridge configs
-
+https://testnet.bscscan.com/address/0x9a72e87c195ca2804772449393c75a83a702e23d#code
 ## 4. set router config on chain
 
 call `RouterConfig` contract to set configs on blcokchain.
