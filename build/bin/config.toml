@@ -146,14 +146,14 @@ APIAddress = ["https://data-seed-prebsc-1-s1.binance.org:8545"]
 
 # Gateways config. key is chainID
 [Gateways]
-97     = ["http://127.0.0.1:6711", "http://127.0.0.1:6722"]
-80001 = ["http://127.0.0.1:8711", "http://127.0.0.1:8722"]
+97     = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]
+80001 = ["https://rpc-mumbai.maticvigil.com"]
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
-97     = ["http://127.0.0.1:6000"]
-80001 = ["http://127.0.0.1:8000"]
+97     = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]
+80001 = ["https://rpc-mumbai.maticvigil.com"]
 
 
 # MPC config

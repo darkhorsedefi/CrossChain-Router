@@ -1,0 +1,75 @@
+{
+	"compiler": {
+		"version": "0.8.2+commit.661d1103"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onTokenApproval",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"AnyswapERC20.sol": "IApprovalReceiver"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"AnyswapERC20.sol": {
+			"keccak256": "0x01f1212bc116e6855de88c9867e4232fb60f4580d0cc3f4e13577e8eb66e7c71",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8174676b83481302b851d31e51b60f5b38480176d65350de6bb866e371175869",
+				"dweb:/ipfs/QmPbJTqcLVMnDG7iAhpg39VZTK7dbVrc1gccQPtYeW72BD"
+			]
+		}
+	},
+	"version": 1
+}

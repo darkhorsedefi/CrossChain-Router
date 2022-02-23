@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.2+commit.661d1103"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"AnyswapRouter.sol": "SushiswapV2Library"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"AnyswapRouter.sol": {
+			"keccak256": "0x26d24eee2863be2b6b23f6a7d08f794b10d203781dcc3c28dd0cdd3d41ff5da0",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8bc9ea1f4ba000f4ad2f4615d74a4c015bb6ac1b5e0544bee6d2e5f178aebc0b",
+				"dweb:/ipfs/QmVhWqcLMpKGPrG3rUvUjwc78kpxfx2ciDBHKANShcW8yY"
+			]
+		}
+	},
+	"version": 1
+}
