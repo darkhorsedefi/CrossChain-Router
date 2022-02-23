@@ -139,7 +139,7 @@ MIM  = ["0x2222222222222222222222222222222222222222"]
 [OnChain]
 # 0: disable, min:600, unit is seconds
 ReloadCycle = 0
-Contract = "0x9a72e87c195ca2804772449393c75a83a702e23d"
+Contract = "0xf37f50d6bcff79e7f4f45ab87de136e05559c838"
 APIAddress = ["https://data-seed-prebsc-1-s1.binance.org:8545"]
 #WSServers = ["ws://127.0.0.1:7711"]
 

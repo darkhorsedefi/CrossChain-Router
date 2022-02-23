@@ -42,6 +42,7 @@ xDait testnet
 deploy a `RouterConfig` contract to store router bridge configs
 https://bscscan.com/address/0xbccff1c6c1ca650f533d3dcc5f4722aae6718337#code
 
+тестовый https://testnet.bscscan.com/address/0xf37f50d6bcff79e7f4f45ab87de136e05559c838#code
 
 
 
