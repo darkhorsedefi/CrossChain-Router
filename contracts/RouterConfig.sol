@@ -100,18 +100,13 @@ contract RouterConfig is IConfigQuery {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     // Constructor with two owners
-    constructor (address[2] memory newOwners) {
-        require(newOwners[0] != newOwners[1], "CTOR: owners are same");
-        owners = newOwners;
+    constructor () {
+        owner = msg.sender;
     }
 
     function transferOwnership(address newOwner) public onlyOwner {
         emit OwnershipTransferred(msg.sender, newOwner);
-        if (msg.sender == owners[0]) {
-            owners[0] = newOwner;
-        } else {
-            owners[1] = newOwner;
-        }
+        owner = newOwner;
     }
 
     function getAllChainIDs() external override view returns (uint256[] memory) {
