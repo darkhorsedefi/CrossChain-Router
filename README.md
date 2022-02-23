@@ -28,8 +28,10 @@ deploy a `AnyswapERC20` contract for each token on each blockchain
 constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault) {
 underlying - адрес токена ERC20
 vault - mcp - адрес ноды (ктоработает с контрактом и делает свапы)
+minter - адресс AnyswapRouter`
 
-https://testnet.bscscan.com/address/0xabcf3a0b5a3c003e7de0779a3dc1abd5f0674b30
+https://testnet.bscscan.com/address/0xabcf3a0b5a3c003e7de0779a3dc1abd5f0674b30 (old)
+https://testnet.bscscan.com/address/0xd71a1bbabb389f3af78633e040bd994a99210c59#code ( исправлен minter - указывается в контракте, в оригинале нужно отдельно вызывать функцию и ждать два дня для подтверждения добавления нового минтера)
 AnySwapTether
 основной токен https://testnet.bscscan.com/address/0x6e9c98a8a481bf038ba7e1d669a0086547dd144e
 
@@ -86,7 +88,7 @@ call the following contract function:
 setTokenConfig(string tokenID, uint256 chainID, TokenConfig config)
 
 
-"97TETHER", 97, [8,"0xabcf3a0b5a3c003e7de0779a3dc1abd5f0674b30",6,"1000000000000000000000000","100000000000000000000","100000000000000000000000",1000,"10000000000000000000","1500000000000000000"]
+"97TETHER", 97, [8,"0xd71a1bbabb389f3af78633e040bd994a99210c59",6,"1000000000000000000000000","100000000000000000000","100000000000000000000000",1000,"10000000000000000000","1500000000000000000"]
 https://testnet.bscscan.com/tx/0x7ae6c74ce8df56ee0ac7566fba4d0fb77eaf3298039c6e1cf04cd4c5ee5c96c9
 
 ```
