@@ -263,7 +263,7 @@ contract AnyswapV6ERC20 is IAnyswapV3ERC20 {
     event LogSwapin(bytes32 indexed txhash, address indexed account, uint amount);
     event LogSwapout(address indexed account, address indexed bindaddr, uint amount);
 
-    constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault) {
+    constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault, address _minter) {
         name = _name;
         symbol = _symbol;
         decimals = _decimals;
@@ -272,6 +272,9 @@ contract AnyswapV6ERC20 is IAnyswapV3ERC20 {
             require(_decimals == IERC20(_underlying).decimals());
         }
 
+        // Set minter
+        isMinter[_minter] = true;
+        minters.push(_minter);
         // Use init to allow for CREATE2 accross all chains
         _init = true;
 

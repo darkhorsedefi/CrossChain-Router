@@ -145,6 +145,11 @@ call the following contract function:
 
 ```solidity
 setMPCPubkey(address addr, string pubkey)
+
+
+"0x7594E0bC1EB3592E773E29F5d9ec64e8a7F35789", "0x021954cd587cf07b6e94662e28b1ac749424b9b0df974c61a9b41b16a117ca0306"
+
+https://testnet.bscscan.com/tx/0x4b5f340fa140dfb73892d48ceead93096fb143f9432cef3b4428b63e38d191dd
 ```
 
 ## 5. add local config file

@@ -150,11 +150,11 @@
 	},
 	"sources": {
 		"AnyswapERC20.sol": {
-			"keccak256": "0x01f1212bc116e6855de88c9867e4232fb60f4580d0cc3f4e13577e8eb66e7c71",
+			"keccak256": "0xebf3fa731dabe055252c49855b550c68dbe062bdd715b448d7c99f436ef819fa",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://8174676b83481302b851d31e51b60f5b38480176d65350de6bb866e371175869",
-				"dweb:/ipfs/QmPbJTqcLVMnDG7iAhpg39VZTK7dbVrc1gccQPtYeW72BD"
+				"bzz-raw://0aa9aae7d5fb140eff91cdec03a297bdd32af61d89ea1ff2fba60a29278cea9f",
+				"dweb:/ipfs/QmPp2VzxndmsBuYt8t2w6E2uGCaAW4K8B6YRCxoCZoqQtG"
 			]
 		}
 	},
