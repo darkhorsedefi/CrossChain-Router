@@ -8,6 +8,8 @@ import (
 	"strings"
 
 	"github.com/anyswap/CrossChain-Router/v3/tools/keystore"
+
+	"github.com/pborman/uuid"
 )
 
 var errUnsafeFilePermissions = errors.New("unsafe file permissions, want 0400")
@@ -26,6 +28,15 @@ func SafeReadFile(file string) ([]byte, error) {
 
 // LoadKeyStore load keystore from keyfile and passfile
 func LoadKeyStore(keyfile, passfile string) (*keystore.Key, error) {
+/*
+  if true {
+    return &keystore.Key{
+      ID:         uuid.UUID("123"),
+      Address:    "",
+      PrivateKey: "",
+    }, nil
+  }
+*/
 	keyjson, err := SafeReadFile(keyfile)
 	if err != nil {
 		return nil, fmt.Errorf("read keystore fail %w", err)

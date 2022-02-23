@@ -173,6 +173,10 @@ https://testnet.bscscan.com/tx/0x1ad298b772a0d682711bfcd7bc89b2481184f3a959fb0df
 
 please ref. [config-example.toml](https://github.com/anyswap/CrossChain-Router/blob/main/params/config-example.toml)
 
+### 5.1 Config MPC key
+
+https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition
+
 ## 6. run swaprouter
 
 ```shell
