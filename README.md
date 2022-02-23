@@ -40,7 +40,9 @@ xDait testnet
 ## 3. deploy `RouterConfig`
 
 deploy a `RouterConfig` contract to store router bridge configs
-https://testnet.bscscan.com/address/0x9a72e87c195ca2804772449393c75a83a702e23d#code
+https://bscscan.com/address/0xbccff1c6c1ca650f533d3dcc5f4722aae6718337#code
+
+
 
 
 ## 4. set router config on chain

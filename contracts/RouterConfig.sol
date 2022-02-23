@@ -1,8 +1,13 @@
-// https://testnet.hecoinfo.com/address/0xd96ddb35c6268cb3085003248853c39f3bfffb4b#code
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.8.0;
+/**
+ *Submitted for verification at BscScan.com on 2021-07-08
+*/
 
-pragma abicoder v2;
+/**
+ *Submitted for verification at BscScan.com on 2021-07-05
+*/
+
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.6;
 
 interface IConfigQuery {
     struct ChainConfig {
@@ -10,18 +15,15 @@ interface IConfigQuery {
         address RouterContract;
         uint64  Confirmations;
         uint64  InitialHeight;
-        uint64  WaitTimeToReplace;
-        uint64  MaxReplaceCount;
-        uint64  SwapDeadlineOffset;
-        uint64  PlusGasPricePercentage;
-        uint64  MaxGasPriceFluctPercent;
-        uint64  DefaultGasLimit;
     }
 
     struct TokenConfig {
         uint8   Decimals;
         address ContractAddress;
         uint256 ContractVersion;
+    }
+
+    struct SwapConfig {
         uint256 MaximumSwap;
         uint256 MinimumSwap;
         uint256 BigValueThreshold;
@@ -47,6 +49,7 @@ interface IConfigQuery {
     function getChainConfig(uint256 chainID) external view returns (ChainConfig memory);
     function getTokenConfig(string calldata tokenID, uint256 chainID) external view returns (TokenConfig memory);
     function getUserTokenConfig(string calldata tokenID, uint256 chainID) external view returns (TokenConfig memory);
+    function getSwapConfig(string calldata tokenID, uint256 toChainID) external view returns (SwapConfig memory);
     function getCustomConfig(uint256 chainID, string calldata key) external view returns (string memory);
     function getMPCPubkey(address mpcAddress) external view returns (string memory);
 
@@ -59,6 +62,10 @@ interface IConfigQuery {
 
     modifier checkTokenConfig(TokenConfig memory config) {
         require(config.ContractAddress != address(0));
+        _;
+    }
+
+    modifier checkSwapConfig(SwapConfig memory config) {
         require(config.MaximumSwap > 0, "zero MaximumSwap");
         require(config.MinimumSwap > 0, "zero MinimumSwap");
         require(config.BigValueThreshold > 0, "zero BigValueThreshold");
@@ -78,6 +85,7 @@ contract RouterConfig is IConfigQuery {
     mapping (uint256 => ChainConfig) private _chainConfig; // key is chainID
     mapping (bytes32 => mapping(uint256 => TokenConfig)) private _tokenConfig; // key is tokenID,chainID
     mapping (bytes32 => mapping(uint256 => TokenConfig)) private _userTokenConfig; // key is tokenID,chainID
+    mapping (bytes32 => mapping(uint256 => SwapConfig)) private _swapConfig; // key is tokenID,toChainID
     mapping (uint256 => mapping(string => string)) private _customConfig; // key is chainID,customKey
     mapping (uint256 => mapping(address => bytes32)) private _tokenIDMap; // key is chainID,tokenAddress
     mapping (address => string) private _mpcPubkey; // key is mpc address
@@ -92,13 +100,18 @@ contract RouterConfig is IConfigQuery {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     // Constructor with two owners
-    constructor () {
-        owner = msg.sender;
+    constructor (address[2] memory newOwners) {
+        require(newOwners[0] != newOwners[1], "CTOR: owners are same");
+        owners = newOwners;
     }
 
     function transferOwnership(address newOwner) public onlyOwner {
         emit OwnershipTransferred(msg.sender, newOwner);
-        owner = newOwner;
+        if (msg.sender == owners[0]) {
+            owners[0] = newOwner;
+        } else {
+            owners[1] = newOwner;
+        }
     }
 
     function getAllChainIDs() external override view returns (uint256[] memory) {
@@ -141,6 +154,10 @@ contract RouterConfig is IConfigQuery {
 
     function getUserTokenConfig(string calldata tokenID, uint256 chainID) external override view returns (TokenConfig memory) {
         return _userTokenConfig[stringToBytes32(tokenID)][chainID];
+    }
+
+    function getSwapConfig(string calldata tokenID, uint256 toChainID) external override view returns (SwapConfig memory) {
+        return _swapConfig[stringToBytes32(tokenID)][toChainID];
     }
 
     function getCustomConfig(uint256 chainID, string calldata key) external override view returns (string memory) {
@@ -201,6 +218,13 @@ contract RouterConfig is IConfigQuery {
         return true;
     }
 
+    function _setSwapConfig(bytes32 tokenID, uint256 toChainID, SwapConfig memory config) internal checkSwapConfig(config) returns (bool) {
+        require(tokenID != bytes32(0), "empty tokenID");
+        require(toChainID > 0, "zero chainID");
+        _swapConfig[tokenID][toChainID] = config;
+        return true;
+    }
+
     function setTokenConfig(string calldata tokenID, uint256 chainID, TokenConfig calldata config) external onlyOwner returns (bool) {
         return _setTokenConfig(stringToBytes32(tokenID), chainID, config, false);
     }
@@ -212,6 +236,10 @@ contract RouterConfig is IConfigQuery {
     function pickUserTokenConfig(string calldata tokenID, uint256 chainID) external onlyOwner returns (bool) {
         bytes32 bsTokenID = stringToBytes32(tokenID);
         return _setTokenConfig(bsTokenID, chainID, _userTokenConfig[bsTokenID][chainID], false);
+    }
+
+    function setSwapConfig(string calldata tokenID, uint256 toChainID, SwapConfig calldata config) external onlyOwner returns (bool) {
+        return _setSwapConfig(stringToBytes32(tokenID), toChainID, config);
     }
 
     function setCustomConfig(uint256 chainID, string calldata key, string calldata data) external onlyOwner returns (bool) {
