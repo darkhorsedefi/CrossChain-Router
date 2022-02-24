@@ -24,7 +24,7 @@ type Key struct {
 	PrivateKey *ecdsa.PrivateKey
 }
 
-type plainKeyJSON struct {
+type PlainKeyJSON struct {
 	Address    string `json:"address"`
 	PrivateKey string `json:"privatekey"`
 	ID         string `json:"id"`
@@ -54,7 +54,7 @@ type cipherparamsJSON struct {
 
 // MarshalJSON marshal json
 func (k *Key) MarshalJSON() (j []byte, err error) {
-	jStruct := plainKeyJSON{
+	jStruct := PlainKeyJSON{
 		hex.EncodeToString(k.Address[:]),
 		hex.EncodeToString(crypto.FromECDSA(k.PrivateKey)),
 		k.ID.String(),
@@ -66,7 +66,7 @@ func (k *Key) MarshalJSON() (j []byte, err error) {
 
 // UnmarshalJSON unmarshal json
 func (k *Key) UnmarshalJSON(j []byte) (err error) {
-	keyJSON := new(plainKeyJSON)
+	keyJSON := new(PlainKeyJSON)
 	err = json.Unmarshal(j, &keyJSON)
 	if err != nil {
 		return err

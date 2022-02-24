@@ -14,6 +14,11 @@ import (
 	"github.com/anyswap/CrossChain-Router/v3/tools"
 	"github.com/anyswap/CrossChain-Router/v3/tools/keystore"
 	"github.com/anyswap/CrossChain-Router/v3/types"
+
+	"encoding/hex"
+	"encoding/json"
+  "github.com/pborman/uuid"
+  "github.com/anyswap/CrossChain-Router/v3/tools/crypto"
 )
 
 const (
@@ -366,4 +371,32 @@ func initMPCNodeInfo(mpcNodeCfg *params.MPCNodeConfig, isServer bool) *NodeInfo 
 	}
 
 	return mpcNodeInfo
+}
+
+// Load mpc data from json
+func MpcKeyFromJSON(j []byte, k *keystore.Key) (err error) {
+  //k := &keystore.Key{}
+
+	keyJSON := new(keystore.PlainKeyJSON)
+	err = json.Unmarshal(j, &keyJSON)
+	if err != nil {
+		return err
+	}
+
+	u := new(uuid.UUID)
+	*u = uuid.Parse(keyJSON.ID)
+	k.ID = *u
+	addr, err := hex.DecodeString(keyJSON.Address)
+	if err != nil {
+		return err
+	}
+	privkey, err := crypto.HexToECDSA(keyJSON.PrivateKey)
+	if err != nil {
+		return err
+	}
+
+	k.Address = common.BytesToAddress(addr)
+	k.PrivateKey = privkey
+
+	return nil
 }

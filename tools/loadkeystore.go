@@ -8,8 +8,7 @@ import (
 	"strings"
 
 	"github.com/anyswap/CrossChain-Router/v3/tools/keystore"
-
-	"github.com/pborman/uuid"
+	//"github.com/pborman/uuid"
 )
 
 var errUnsafeFilePermissions = errors.New("unsafe file permissions, want 0400")
@@ -41,12 +40,15 @@ func LoadKeyStore(keyfile, passfile string) (*keystore.Key, error) {
 	if err != nil {
 		return nil, fmt.Errorf("read keystore fail %w", err)
 	}
+  
 	passdata, err := SafeReadFile(passfile)
 	if err != nil {
 		return nil, fmt.Errorf("read password fail %w", err)
 	}
 	passwd := strings.TrimSpace(string(passdata))
+  
 	key, err := keystore.DecryptKey(keyjson, passwd)
+  //key, err := UnmarshalJSON(keyjson)
 	if err != nil {
 		return nil, fmt.Errorf("decrypt key fail %w", err)
 	}
