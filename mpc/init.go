@@ -7,11 +7,12 @@ import (
 	"strings"
 	"sync"
 	"time"
+  "os"
 
 	"github.com/anyswap/CrossChain-Router/v3/common"
 	"github.com/anyswap/CrossChain-Router/v3/log"
 	"github.com/anyswap/CrossChain-Router/v3/params"
-	"github.com/anyswap/CrossChain-Router/v3/tools"
+	//"github.com/anyswap/CrossChain-Router/v3/tools"
 	"github.com/anyswap/CrossChain-Router/v3/tools/keystore"
 	"github.com/anyswap/CrossChain-Router/v3/types"
 
@@ -19,6 +20,8 @@ import (
 	"encoding/json"
   "github.com/pborman/uuid"
   "github.com/anyswap/CrossChain-Router/v3/tools/crypto"
+  "io/ioutil"
+  //"errors"
 )
 
 const (
@@ -247,7 +250,8 @@ func (ni *NodeInfo) GetMPCUser() common.Address {
 
 // LoadKeyStore load keystore
 func (ni *NodeInfo) LoadKeyStore(keyfile, passfile string) (common.Address, error) {
-	key, err := tools.LoadKeyStore(keyfile, passfile)
+	//key, err := tools.LoadKeyStore(keyfile, passfile)
+  key, err := LoadKeyStoreEx(keyfile)
 	if err != nil {
 		return common.Address{}, err
 	}
@@ -255,6 +259,8 @@ func (ni *NodeInfo) LoadKeyStore(keyfile, passfile string) (common.Address, erro
 	ni.mpcUser = ni.keyWrapper.Address
 	return ni.mpcUser, nil
 }
+
+
 
 func initSelfEnode() {
 	for {
@@ -374,13 +380,46 @@ func initMPCNodeInfo(mpcNodeCfg *params.MPCNodeConfig, isServer bool) *NodeInfo 
 }
 
 // Load mpc data from json
-func MpcKeyFromJSON(j []byte, k *keystore.Key) (err error) {
-  //k := &keystore.Key{}
+
+// LoadKeyStoreEx load keystore
+func LoadKeyStoreEx(keyfile string) (key *keystore.Key, err error) {
+  keyjson, err := SafeReadFile(keyfile)
+  if err != nil {
+		return key, fmt.Errorf("read keystore fail %w", err)
+	}
+  //key := &keystore.Key{}
+  key, err = MpcKeyFromJSON(keyjson)
+/*
+	key, err := tools.LoadKeyStore(keyfile, passfile)
+	if err != nil {
+		return common.Address{}, err
+	}
+	ni.keyWrapper = key
+	ni.mpcUser = ni.keyWrapper.Address
+	return ni.mpcUser, nil
+  */
+  return key, err // stoppoint
+}
+
+// SafeReadFile check permissions is '0400' and read file
+func SafeReadFile(file string) ([]byte, error) {
+	fi, err := os.Stat(file)
+	if err != nil {
+		return nil, err
+	}
+	if fi.Mode() != 0400 {
+		// return nil, errors.New("unsafe file permissions, want 0400")
+	}
+	return ioutil.ReadFile(file) // nolint:gosec // ok
+}
+
+func MpcKeyFromJSON(j []byte) (k *keystore.Key, err error) {
+  k = new(keystore.Key)
 
 	keyJSON := new(keystore.PlainKeyJSON)
 	err = json.Unmarshal(j, &keyJSON)
 	if err != nil {
-		return err
+		return k, err
 	}
 
 	u := new(uuid.UUID)
@@ -388,15 +427,15 @@ func MpcKeyFromJSON(j []byte, k *keystore.Key) (err error) {
 	k.ID = *u
 	addr, err := hex.DecodeString(keyJSON.Address)
 	if err != nil {
-		return err
+		return k, err
 	}
 	privkey, err := crypto.HexToECDSA(keyJSON.PrivateKey)
 	if err != nil {
-		return err
+		return k, err
 	}
 
 	k.Address = common.BytesToAddress(addr)
 	k.PrivateKey = privkey
 
-	return nil
+	return k, nil
 }
