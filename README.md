@@ -21,6 +21,11 @@ mcp - адрес ноды (кто работает с контрактом и д
 testnet https://testnet.bscscan.com/address/0x69558d860103e420013fadde75f81b54a06d728f#code
 ======================================================
 xDai testnet
+Xdait testnet - Wrapped POI
+https://blockscout.com/poa/sokol/address/0x7C8F2b4D30A98A9Abcdeac3cf49d51f92a6dd81d/contracts
+
+AnyswapRouter
+https://blockscout.com/poa/sokol/address/0x67AAf7aB10d4273023ddEEad302Bc9a7E7951eC2/contracts
 
 ## 2. deploy `AnyswapERC20`
 Binance testnet
@@ -30,11 +35,17 @@ underlying - адрес токена ERC20
 vault - mcp - адрес ноды (ктоработает с контрактом и делает свапы)
 minter - адресс AnyswapRouter`
 
-https://testnet.bscscan.com/address/0xabcf3a0b5a3c003e7de0779a3dc1abd5f0674b30 (old)
 https://testnet.bscscan.com/address/0xd71a1bbabb389f3af78633e040bd994a99210c59#code ( исправлен minter - указывается в контракте, в оригинале нужно отдельно вызывать функцию и ждать два дня для подтверждения добавления нового минтера)
 AnySwapTether
 основной токен https://testnet.bscscan.com/address/0x6e9c98a8a481bf038ba7e1d669a0086547dd144e
 
+
+xDai testnet
+
+AnySwapTether
+https://blockscout.com/poa/sokol/address/0x52C72781aB6B5FE83E0B5c6B0F890D5B08aff6E4/contracts
+основной токен
+https://blockscout.com/poa/sokol/address/0x35bE4cA2f4C66861b6B3B9E6F35A7d8FDaD48dea/contracts
 =====================================================
 xDait testnet
 ## 3. deploy `RouterConfig`
@@ -78,9 +89,14 @@ set chain config input data is 0xdefb3a0d000000000000000000000000000000000000000
 
 
 solidy/web3 call args
-
+bnb testnet
 97,["tbnb", "0x69558d860103e420013fadde75f81b54a06d728f", 3, 0]
 https://testnet.bscscan.com/tx/0x9eb04455c49d5bb9507fee0dcfcace7981066773a5f8124270d33b9ac5852b90
+
+xdai testnet
+77,["txdai", "0x67AAf7aB10d4273023ddEEad302Bc9a7E7951eC2", 3, 0]
+https://testnet.bscscan.com/tx/0x2879aa65033d43f0968c3b487dc142940a3245a64113476f3368b1409ed2864e
+
 ```
 
 ### 4.2 set token config
@@ -106,16 +122,20 @@ chainID is 46688
 token config struct is {
   "TokenID": "test",
   "Decimals": 18,
-  "ContractAddress": "0xb302f922b24420f3a3048dddc4e2761ce37ea098",
+  "ContractAddress": "0xb302f922b24420f3a3048dddc4e2761ce37ea098", - AnyswapERC20
   "ContractVersion": 4
 }
 set token config input data is 0xba6e0d0f00000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000b6600000000000000000000000000000000000000000000000000000000000000012000000000000000000000000b302f922b24420f3a3048dddc4e2761ce37ea098000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000047465737400000000000000000000000000000000000000000000000000000000
 
 
 dolidy/web3 call args
+bnb testnet
 "97TETHER", 97, [8,"0xd71a1bbabb389f3af78633e040bd994a99210c59",6]
 https://testnet.bscscan.com/tx/0x5aba55ec09696605f05f4ccceb1682c2145c3ef2ff58a6814c7503eac04c88c1
 
+xdai testnet
+"77TETHER", 77, [8,"0x52C72781aB6B5FE83E0B5c6B0F890D5B08aff6E4",6]
+https://testnet.bscscan.com/tx/0xc7c91f839a5c6a1ed646c3a7b3a784c32075d75b61f0a36f37349592c39c56ea
 ```
 
 ### 4.3 set swap config
@@ -150,10 +170,14 @@ set swap config input data is 0xca29ee960000000000000000000000000000000000000000
 
 
 solidity/web3 call args
-
+test bnb
 "97TETHER", 97, ["1000000000000000000000000", "100000000000000000000", "100000000000000000000000", "1000","10000000000000000000","1500000000000000000"]
 
 https://testnet.bscscan.com/tx/0x5a6b68b5c8c18d7c7f71aa93a4657835686081724bd88bc8dc071b22c0b15a27
+
+test xdai
+"77TETHER", 77, ["1000000000000000000000000", "100000000000000000000", "100000000000000000000000", "1000","10000000000000000000","1500000000000000000"]
+https://testnet.bscscan.com/tx/0xfb6a35600b7cbf042d5bd50f43ea3cdafef1e738059c4e24e471c6cdba58bb9d
 ```
 
 ### 4.4 set mpc address's public key

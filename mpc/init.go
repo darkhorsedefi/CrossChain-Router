@@ -87,7 +87,7 @@ func Init(mpcConfig *params.MPCConfig, isServer bool) {
 		}
 	}
 
-	initSelfEnode()
+	//initSelfEnode()
 	initAllEnodes()
 
 	verifyInitiators(mpcConfig.Initiators)

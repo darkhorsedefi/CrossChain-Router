@@ -42,18 +42,22 @@ SwapDeadlineOffset = 36000
 # default gas limit. key is chainID. if not set, use 90000 as default.
 [Server.DefaultGasLimit]
 97     = 90000
+77     = 90000
 80001 = 90000
 # use fixed gas price (no adjust). key is chainID.
 [Server.FixedGasPrice]
 97     = "1000000001"
+77     = "1000000001"
 80001 = "1000000001"
 # config maximum gas price. key is chainID.
 [Server.MaxGasPrice]
 97     = "3000000000"
+77     = "3000000000"
 80001 = "3000000000"
 # swap nonce passed confirmed interval (seconds). key is chainID.
 [Server.NoncePassedConfirmInterval]
 97     = 600
+77     = 600
 80001 = 600
 # dynamic fee tx config, the last part (3 here) is chainID
 [Server.DynamicFeeTx.3]
@@ -147,12 +151,14 @@ APIAddress = ["https://data-seed-prebsc-1-s1.binance.org:8545"]
 # Gateways config. key is chainID
 [Gateways]
 97     = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]
+77     = ["https://sokol.poa.network"]
 80001 = ["https://rpc-mumbai.maticvigil.com"]
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
 97     = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]
+77     = ["https://sokol.poa.network"]
 80001 = ["https://rpc-mumbai.maticvigil.com"]
 
 
@@ -191,7 +197,7 @@ SignGroups = [
 ]
 
 # mpc user keystore and password file (suggest using absolute path)
-KeystoreFile = "/home/xxx/accounts/keystore1"
+KeystoreFile = "d:\\WORK\\WebServers\\home\\localhost\\www\\main\\evmbridge\\CrossChain-Router\\testkey.json"
 PasswordFile = "/home/xxx/accounts/password1"
 
 # mpc backend node (gmpc node RPC address)
