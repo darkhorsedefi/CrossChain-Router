@@ -88,9 +88,9 @@ func Init(mpcConfig *params.MPCConfig, isServer bool) {
 	}
 
 	//initSelfEnode()
-	initAllEnodes()
+	//initAllEnodes()
 
-	verifyInitiators(mpcConfig.Initiators)
+	//verifyInitiators(mpcConfig.Initiators)
 	log.Info("init mpc success", "apiPrefix", mpcAPIPrefix, "isServer", isServer,
 		"rpcTimeout", mpcRPCTimeout, "signTimeout", mpcSignTimeout.String(),
 		"maxSignGroupFailures", maxSignGroupFailures,

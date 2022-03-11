@@ -1,0 +1,42 @@
+=============== Mar 5, 2022 (CET) ===============
+17:11:37.217798 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:11:37.305803 db@open opening
+17:11:37.320804 version@stat F·[] S·0B[] Sc·[]
+17:11:37.347805 db@janitor F·2 G·0
+17:11:37.347805 db@open done T·42.0024ms
+17:47:31.931040 db@close closing
+17:47:31.931040 db@close done T·0s
+=============== Mar 5, 2022 (CET) ===============
+18:32:17.680656 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:32:17.681656 version@stat F·[] S·0B[] Sc·[]
+18:32:17.682657 db@open opening
+18:32:17.682657 journal@recovery F·1
+18:32:17.683657 journal@recovery recovering @1
+18:32:17.735660 memdb@flush created L0@2 N·1 S·206B "rou..ier,v1":"rou..ier,v1"
+18:32:17.744660 version@stat F·[1] S·206B[206B] Sc·[0.25]
+18:32:17.845666 db@janitor F·3 G·0
+18:32:17.845666 db@open done T·163.0093ms
+18:32:25.164084 db@close closing
+18:32:25.165084 db@close done T·1ms
+=============== Mar 5, 2022 (CET) ===============
+19:04:41.346828 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+19:04:41.347828 version@stat F·[1] S·206B[206B] Sc·[0.25]
+19:04:41.347828 db@open opening
+19:04:41.347828 journal@recovery F·1
+19:04:41.348828 journal@recovery recovering @3
+19:04:41.349828 version@stat F·[1] S·206B[206B] Sc·[0.25]
+19:04:41.464834 db@janitor F·3 G·0
+19:04:41.464834 db@open done T·117.0067ms
+19:05:02.330028 db@close closing
+19:05:02.330028 db@close done T·0s
+=============== Mar 5, 2022 (CET) ===============
+19:29:37.230387 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+19:29:37.231387 version@stat F·[1] S·206B[206B] Sc·[0.25]
+19:29:37.231387 db@open opening
+19:29:37.231387 journal@recovery F·1
+19:29:37.232387 journal@recovery recovering @5
+19:29:37.233388 version@stat F·[1] S·206B[206B] Sc·[0.25]
+19:29:37.369395 db@janitor F·3 G·0
+19:29:37.369395 db@open done T·138.0079ms
+19:30:03.087866 db@close closing
+19:30:03.087866 db@close done T·1.0001ms
