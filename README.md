@@ -32,7 +32,7 @@ Binance testnet
 deploy a `AnyswapERC20` contract for each token on each blockchain
 constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault) {
 underlying - адрес токена ERC20
-vault - mcp - адрес ноды (ктоработает с контрактом и делает свапы)
+vault - адресс AnyswapRouter`
 minter - адресс AnyswapRouter`
 
 https://testnet.bscscan.com/address/0xd71a1bbabb389f3af78633e040bd994a99210c59#code ( исправлен minter - указывается в контракте, в оригинале нужно отдельно вызывать функцию и ждать два дня для подтверждения добавления нового минтера)
