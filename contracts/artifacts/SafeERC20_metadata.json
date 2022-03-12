@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"AnyswapRouter.sol": "SafeERC20"
+			"AnyswapERC20.sol": "SafeERC20"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"AnyswapRouter.sol": {
-			"keccak256": "0x26d24eee2863be2b6b23f6a7d08f794b10d203781dcc3c28dd0cdd3d41ff5da0",
+		"AnyswapERC20.sol": {
+			"keccak256": "0xebf3fa731dabe055252c49855b550c68dbe062bdd715b448d7c99f436ef819fa",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://8bc9ea1f4ba000f4ad2f4615d74a4c015bb6ac1b5e0544bee6d2e5f178aebc0b",
-				"dweb:/ipfs/QmVhWqcLMpKGPrG3rUvUjwc78kpxfx2ciDBHKANShcW8yY"
+				"bzz-raw://0aa9aae7d5fb140eff91cdec03a297bdd32af61d89ea1ff2fba60a29278cea9f",
+				"dweb:/ipfs/QmPp2VzxndmsBuYt8t2w6E2uGCaAW4K8B6YRCxoCZoqQtG"
 			]
 		}
 	},
