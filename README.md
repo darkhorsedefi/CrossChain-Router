@@ -19,13 +19,22 @@ https://testnet.bscscan.com/address/0x1350d3f31d9f805626980fc37e6163ed872f2e45#c
 mcp - адрес ноды (кто работает с контрактом и делает свапы)
 
 testnet https://testnet.bscscan.com/address/0x69558d860103e420013fadde75f81b54a06d728f#code
+
 ======================================================
+
 xDai testnet
 Xdait testnet - Wrapped POI
 https://blockscout.com/poa/sokol/address/0x7C8F2b4D30A98A9Abcdeac3cf49d51f92a6dd81d/contracts
 
 AnyswapRouter
 https://blockscout.com/poa/sokol/address/0x67AAf7aB10d4273023ddEEad302Bc9a7E7951eC2/contracts
+
+
+Polygon testnet
+Wrapped Matic (wNative)
+https://mumbai.polygonscan.com/address/0xb0ca6c34cfad6dbb5b0423f421584faf718f3a7e
+Router
+https://mumbai.polygonscan.com/address/0x20aabbc7752457e980c53ac7bc8c8a72df2aa4eb
 
 ## 2. deploy `AnyswapERC20`
 Binance testnet
@@ -51,7 +60,13 @@ https://blockscout.com/poa/sokol/address/0x821FCbC717acD26B1Cc582D29Cc3CDcc696C3
 основной токен
 https://blockscout.com/poa/sokol/address/0x35bE4cA2f4C66861b6B3B9E6F35A7d8FDaD48dea/contracts
 =====================================================
-xDait testnet
+
+Polygon testnet
+основной токен
+https://mumbai.polygonscan.com/address/0xd2774939f988ee4545822333105ef4554f44496c
+
+AnySwapTether
+https://mumbai.polygonscan.com/address/0xdf46b199612dfcc4617e7ce627d9464aa914b173
 ## 3. deploy `RouterConfig`
 
 deploy a `RouterConfig` contract to store router bridge configs
