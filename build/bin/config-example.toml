@@ -190,6 +190,7 @@ Initiators = [
 
 SignWithPrivateKey = true
 [MPC.SignerPrivateKeys]
+# eth private key "0x1111111111111111111111111111111111111111"
 ALL   = "-----"
 4     = "-----"
 46688 = "-----"
