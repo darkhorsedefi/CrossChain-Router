@@ -39,7 +39,16 @@ func GetSwapInFuncHash(tokenCfg *tokens.TokenConfig, forUnderlying bool) []byte 
 	if forUnderlying {
 		return AnySwapInUnderlyingFuncHash
 	}
-
+  log.Warn("ContractVersion", "VV", tokenCfg.ContractVersion)
+  log.Warn(">>>", "params.IsForceAnySwapInAuto", params.IsForceAnySwapInAuto())
+  log.Warn(">>>", "ForceAnySwapInAutoTokenVersion", ForceAnySwapInAutoTokenVersion)
+  log.Warn(">>>", "ForceAnySwapInTokenVersion", ForceAnySwapInTokenVersion)
+  log.Warn(">>>", "ForceAnySwapInUnderlyingTokenVersion", ForceAnySwapInUnderlyingTokenVersion)
+  log.Warn(">>>", "tokenCfg.GetUnderlying", tokenCfg.GetUnderlying())
+  log.Warn(">>>", "common.Address{}", common.Address{})
+  //if true {
+//    return AnySwapInFuncHash
+  //}
 	switch tokenCfg.ContractVersion {
 	case ForceAnySwapInAutoTokenVersion:
 		return AnySwapInAutoFuncHash
@@ -90,6 +99,7 @@ func (b *Bridge) buildERC20SwapoutTxInput(args *tokens.BuildTxArgs, multichainTo
 	}
 
 	funcHash := GetSwapInFuncHash(toTokenCfg, args.ERC20SwapInfo.ForUnderlying)
+  log.Warn("GetSwapInFuncHash","funcHash", funcHash, "toTokenCfg", toTokenCfg, "underlying", args.ERC20SwapInfo.ForUnderlying)
 
 	input := abicoder.PackDataWithFuncHash(funcHash,
 		common.HexToHash(args.SwapID),

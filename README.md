@@ -46,20 +46,29 @@ deploy a `AnyswapERC20` contract for each token on each blockchain
 `constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault)`
 
 - underlying - адрес токена ERC20
-- vault - mcp - адрес ноды (ктоработает с контрактом и делает свапы)
-- minter - адресс AnyswapRouter
+- vault - адрес AnyswapRouter
+- minter - адрес AnyswapRouter
 
 AnyswapV6ERC20 (исправлен minter - указывается в контракте, в оригинале нужно отдельно вызывать функцию и ждать два дня для подтверждения добавления нового минтера):
 https://testnet.bscscan.com/address/0xd71a1bbabb389f3af78633e040bd994a99210c59#code
 
+AnyswapV6ERC20 (новый ваулт):
+https://testnet.bscscan.com/address/0xc0c3394781c23faa538a506b3c96fb59c050bed8
+
 AnySwapTether:
 основной токен: https://testnet.bscscan.com/address/0x6e9c98a8a481bf038ba7e1d669a0086547dd144e
 
+AnyswapV6ERC20 (новый ваулт):
+https://testnet.bscscan.com/address/0xc0c3394781c23faa538a506b3c96fb59c050bed8
 
 ####  xDai testnet
 
 AnySwapTether:
 https://blockscout.com/poa/sokol/address/0x52C72781aB6B5FE83E0B5c6B0F890D5B08aff6E4/contracts
+
+
+AnyswapTether (новый ваулт):
+https://blockscout.com/poa/sokol/address/0x821FCbC717acD26B1Cc582D29Cc3CDcc696C3e2d/contracts
 
 основной токен:
 https://blockscout.com/poa/sokol/address/0x35bE4cA2f4C66861b6B3B9E6F35A7d8FDaD48dea/contracts
@@ -147,11 +156,11 @@ set token config input data is 0xba6e0d0f000000000000000000000000000000000000000
 
 dolidy/web3 call args
 bnb testnet
-"97TETHER", 97, [8,"0xd71a1bbabb389f3af78633e040bd994a99210c59",6]
+"TETHER", 97, [8,"0xc0c3394781c23faa538a506b3c96fb59c050bed8",6]
 https://testnet.bscscan.com/tx/0x5aba55ec09696605f05f4ccceb1682c2145c3ef2ff58a6814c7503eac04c88c1
 
 xdai testnet
-"77TETHER", 77, [8,"0x52C72781aB6B5FE83E0B5c6B0F890D5B08aff6E4",6]
+"TETHER", 77, [8,"0x821FCbC717acD26B1Cc582D29Cc3CDcc696C3e2d",6]
 https://testnet.bscscan.com/tx/0xc7c91f839a5c6a1ed646c3a7b3a784c32075d75b61f0a36f37349592c39c56ea
 ```
 
@@ -188,12 +197,12 @@ set swap config input data is 0xca29ee960000000000000000000000000000000000000000
 
 solidity/web3 call args
 test bnb
-"97TETHER", 97, ["1000000000000000000000000", "100000000000000000000", "100000000000000000000000", "1000","10000000000000000000","1500000000000000000"]
+"TETHER", 97, ["1000000000000000000000000", "100000000000000000000", "100000000000000000000000", "1000","10000000000000000000","1500000000000000000"]
 
 https://testnet.bscscan.com/tx/0x5a6b68b5c8c18d7c7f71aa93a4657835686081724bd88bc8dc071b22c0b15a27
 
 test xdai
-"77TETHER", 77, ["1000000000000000000000000", "100000000000000000000", "100000000000000000000000", "1000","10000000000000000000","1500000000000000000"]
+"TETHER", 77, ["1000000000000000000000000", "100000000000000000000", "100000000000000000000000", "1000","10000000000000000000","1500000000000000000"]
 https://testnet.bscscan.com/tx/0xfb6a35600b7cbf042d5bd50f43ea3cdafef1e738059c4e24e471c6cdba58bb9d
 ```
 
