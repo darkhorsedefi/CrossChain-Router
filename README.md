@@ -8,54 +8,71 @@ make all
 run the above command, it will generate `./build/bin/swaprouter` binary.
 
 ## 1. deploy `AnyswapRouter`
-Binance testnet
-deploy a `AnyswapRouter` contract for each supported blockchain
+
+deploy a `AnyswapRouter` contract for each supported blockchain. Constructor parameters:
+
+- factory - адрес создателя 
+- wNative - wrapped coin 
+- mcp - адрес ноды (кто работает с контрактом и делает свапы)
+
+AnyswapV3Router:
 https://etherscan.io/address/0xe95fd76cf16008c12ff3b3a937cb16cd9cc20284#code
-factory - адрес создателя 
-wNative - wrapped coin 
+
+Wrapped Ether:
 https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code
+
+WrappedNative:
 https://testnet.bscscan.com/address/0x1350d3f31d9f805626980fc37e6163ed872f2e45#code
 
-mcp - адрес ноды (кто работает с контрактом и делает свапы)
+BSC testnet (AnyswapV6Router)
+https://testnet.bscscan.com/address/0x69558d860103e420013fadde75f81b54a06d728f#code
 
-testnet https://testnet.bscscan.com/address/0x69558d860103e420013fadde75f81b54a06d728f#code
-======================================================
+---
+
 xDai testnet
-Xdait testnet - Wrapped POI
+
+Wrapped POI:
 https://blockscout.com/poa/sokol/address/0x7C8F2b4D30A98A9Abcdeac3cf49d51f92a6dd81d/contracts
 
-AnyswapRouter
+AnyswapRouter:
 https://blockscout.com/poa/sokol/address/0x67AAf7aB10d4273023ddEEad302Bc9a7E7951eC2/contracts
 
 ## 2. deploy `AnyswapERC20`
-Binance testnet
+
+#### Binance testnet
+
 deploy a `AnyswapERC20` contract for each token on each blockchain
-constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault) {
-underlying - адрес токена ERC20
-vault - mcp - адрес ноды (ктоработает с контрактом и делает свапы)
-minter - адресс AnyswapRouter`
 
-https://testnet.bscscan.com/address/0xd71a1bbabb389f3af78633e040bd994a99210c59#code ( исправлен minter - указывается в контракте, в оригинале нужно отдельно вызывать функцию и ждать два дня для подтверждения добавления нового минтера)
-AnySwapTether
-основной токен https://testnet.bscscan.com/address/0x6e9c98a8a481bf038ba7e1d669a0086547dd144e
+`constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault)`
+
+- underlying - адрес токена ERC20
+- vault - mcp - адрес ноды (ктоработает с контрактом и делает свапы)
+- minter - адресс AnyswapRouter
+
+AnyswapV6ERC20 (исправлен minter - указывается в контракте, в оригинале нужно отдельно вызывать функцию и ждать два дня для подтверждения добавления нового минтера):
+https://testnet.bscscan.com/address/0xd71a1bbabb389f3af78633e040bd994a99210c59#code
+
+AnySwapTether:
+основной токен: https://testnet.bscscan.com/address/0x6e9c98a8a481bf038ba7e1d669a0086547dd144e
 
 
-xDai testnet
+####  xDai testnet
 
-AnySwapTether
+AnySwapTether:
 https://blockscout.com/poa/sokol/address/0x52C72781aB6B5FE83E0B5c6B0F890D5B08aff6E4/contracts
-основной токен
+
+основной токен:
 https://blockscout.com/poa/sokol/address/0x35bE4cA2f4C66861b6B3B9E6F35A7d8FDaD48dea/contracts
-=====================================================
-xDait testnet
+
+---
+
 ## 3. deploy `RouterConfig`
 
 deploy a `RouterConfig` contract to store router bridge configs
-https://bscscan.com/address/0xbccff1c6c1ca650f533d3dcc5f4722aae6718337#code
 
-тестовый https://testnet.bscscan.com/address/0xf37f50d6bcff79e7f4f45ab87de136e05559c838#code
+RouterConfig original: https://bscscan.com/address/0xbccff1c6c1ca650f533d3dcc5f4722aae6718337#code
 
-
+RouterConfig testnet: https://testnet.bscscan.com/address/0xf37f50d6bcff79e7f4f45ab87de136e05559c838#code
 
 ## 4. set router config on chain
 
