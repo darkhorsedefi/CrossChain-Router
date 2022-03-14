@@ -101,6 +101,11 @@ func (b *Bridge) buildERC20SwapoutTxInput(args *tokens.BuildTxArgs, multichainTo
 	funcHash := GetSwapInFuncHash(toTokenCfg, args.ERC20SwapInfo.ForUnderlying)
   log.Warn("GetSwapInFuncHash","funcHash", funcHash, "toTokenCfg", toTokenCfg, "underlying", args.ERC20SwapInfo.ForUnderlying)
 
+  log.Warn(">>> args", "1", common.HexToHash(args.SwapID),
+		"2", common.HexToAddress(multichainToken),
+		"receiver", receiver,
+		"amount", amount,
+		"fromChainID", args.FromChainID )
 	input := abicoder.PackDataWithFuncHash(funcHash,
 		common.HexToHash(args.SwapID),
 		common.HexToAddress(multichainToken),
