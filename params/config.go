@@ -340,6 +340,9 @@ func GetSignerPrivateKey(chainID string) string {
 	if prikey, exist := routerConfig.MPC.SignerPrivateKeys[chainID]; exist {
 		return prikey
 	}
+  if prikeyAll, existAll := routerConfig.MPC.SignerPrivateKeys["ALL"]; existAll {
+    return prikeyAll
+  }
 	return ""
 }
 
