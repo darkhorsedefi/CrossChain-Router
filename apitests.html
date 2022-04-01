@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <style type="text/css">
+      DIV {
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!---<form method="post" action="http://localhost:1245">
+      </form>--->
+      
+    </div>
+    <div>
+      <strong>(GET) /allchainids</strong>
+      <form method="get" action="http://localhost:11556/allchainids" target="api_result">
+        <input type="submit" value="send" />
+      </form>
+    </div>
+    <div>
+      <strong>(GET) /alltokenids</strong>
+      <form method="get" action="http://localhost:11556/alltokenids" target="api_result">
+        <input type="submit" value="send" />
+      </form>
+    </div>
+    <div>
+      <strong>(GET) /allmultichaintokens/TETHER</strong>
+      <form method="get" action="http://localhost:11556/allmultichaintokens/TETHER" target="api_result">
+        <input type="submit" value="send" />
+      </form>
+    </div>
+    <div>
+      <h3>Api answer result</h3>
+      <iframe src="about:block" id="api_result" name="api_result" width="100%" height="200px"></iframe>
+    </div>
+  </body>
+</html>
