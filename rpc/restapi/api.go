@@ -203,3 +203,47 @@ func GetSwapConfigHandler(w http.ResponseWriter, r *http.Request) {
 		writeResponse(w, swapConfig, nil)
 	}
 }
+
+type TokenMultichain struct {
+  tokenID string `json:"tokenID"`
+  multichainTokens interface{} `json:"multichainTokens"`
+}
+type AllConfigs struct {
+	allMultichainTokens []TokenMultichain `json:"allMultichainTokens"`
+}
+
+func GetAllConfig(w http.ResponseWriter, r *http.Request) {
+  // vars := mux.Vars(r)
+  // chainID := vars["chainid"]
+  allTokenIDs := router.AllTokenIDs
+  writeResponse(w, allTokenIDs, nil)
+  retValue := AllConfigs{}
+  log.Info(">>>", "allTokenIDs", allTokenIDs)
+  for _, tokenID := range allTokenIDs {
+    allMultichainTokens := router.GetCachedMultichainTokens(tokenID)
+    writeResponse(w, allMultichainTokens, nil)
+    log.Info(">>>", "tokenID", tokenID, "allMultichainTokens", allMultichainTokens)
+    tmc := TokenMultichain{}
+    tmc.tokenID = tokenID
+    tmc.multichainTokens = allMultichainTokens
+    log.Info(">>>", "tmc", tmc)
+    writeResponse(w, tmc, nil)
+    retValue.allMultichainTokens = append(retValue.allMultichainTokens, tmc)
+    
+  }
+  log.Info(">>>", "retValue", retValue)
+  writeResponse(w, retValue, nil)
+  /*
+  jsonData, err := json.Marshal(retValue)
+  log.Info(">>>", "jsonData", jsonData)
+	if err != nil {
+		writeErrResponse(w, err)
+		return
+	}
+  w.Header().Set("Content-Type", "application/json")
+  
+	w.WriteHeader(http.StatusOK)
+	w.Write(jsonData)
+	*/
+	//writeResponse(w, allChainIDs, nil)
+}
