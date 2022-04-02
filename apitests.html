@@ -1,40 +1,151 @@
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style type="text/css">
       DIV {
         margin: 10px;
         padding: 10px;
         border: 2px solid #cccccc;
       }
+      INPUT[type="text"] {
+        width: 50%;
+      }
+      SPAN {
+        display: none;
+      }
     </style>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        const apiUrl = $('#api_url')
+        const prepareFormUrl = (e) => {
+          e.preventDefault()
+          const $form = $($(e.target).parents('FORM')[0])
+          const urlTemplate = $($form.find('[data-type="url-template"]')[0]).val()
+          const urlParts = $form.find('[type="text"]')
+          let formUrl = urlTemplate
+          urlParts.each((i, part) => {
+            const name = $(part).data('name')
+            const value = $(part).val()
+            formUrl = formUrl.replace('{'+name+'}', value)
+          })
+          $form.attr('action', apiUrl.val() + formUrl)
+          $form.append($('#api_result_holder'))
+          $form[0].submit()
+        }
+        $('INPUT[data-type="send-form"]').bind('click', prepareFormUrl)
+      })
+    </script>
   </head>
   <body>
     <div>
-      <!---<form method="post" action="http://localhost:1245">
-      </form>--->
-      
+      <strong>Api url:</strong>
+      <input type="text" value="http://localhost:11556" id="api_url" />
+    </div>
+    <h2>Bridge api - start,status,history</h2>
+    <div>
+      <strong>(POST) /swap/register/{chainid}/{txid}</strong>
+      <form method="post" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/swap/register/{chainid}/{txid}" />
+        <div>
+          <label>chainid:</label>
+          <input type="text" data-name="chainid" value="97" />
+        </div>
+        <div>
+          <label>txid:</label>
+          <input type="text" data-name="txid" value="0xa2a2c0ec4e7291669be1172148cf694f2a65ba3244b2f771b229a209369c857d" />
+          <span>tx id on source chain (97) of anySwapOutUnderlying method</span>
+        </div>
+        <input type="submit" value="send" data-type="send-form" />
+      </form>
     </div>
     <div>
+      <strong>(GET) /swap/status/{chainid}/{txid}</strong>
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/swap/status/{chainid}/{txid}" />
+        <div>
+          <label>chainid:</label>
+          <input type="text" data-name="chainid" value="97" />
+        </div>
+        <div>
+          <label>txid:</label>
+          <input type="text" data-name="txid" value="0xa2a2c0ec4e7291669be1172148cf694f2a65ba3244b2f771b229a209369c857d" />
+          <span>tx id on source chain (97) of anySwapOutUnderlying method</span>
+        </div>
+        <input type="submit" value="send" data-type="send-form" />
+      </form>
+    </div>
+    <h2>Chain and tokens info</h2>
+    <div>
       <strong>(GET) /allchainids</strong>
-      <form method="get" action="http://localhost:11556/allchainids" target="api_result">
-        <input type="submit" value="send" />
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/allchainids" />
+        <input type="submit" value="send" data-type="send-form" />
       </form>
     </div>
     <div>
       <strong>(GET) /alltokenids</strong>
-      <form method="get" action="http://localhost:11556/alltokenids" target="api_result">
-        <input type="submit" value="send" />
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/alltokenids" />
+        <input type="submit" value="send" data-type="send-form" />
       </form>
     </div>
     <div>
-      <strong>(GET) /allmultichaintokens/TETHER</strong>
-      <form method="get" action="http://localhost:11556/allmultichaintokens/TETHER" target="api_result">
-        <input type="submit" value="send" />
+      <strong>(GET) /allmultichaintokens/{tokenid}</strong>
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/allmultichaintokens/{tokenid}" />
+        <div>
+          <label>tokenid:</label>
+          <input type="text" data-name="tokenid" value="TETHER" />
+        </div>
+        <input type="submit" value="send" data-type="send-form" />
       </form>
     </div>
     <div>
-      <h3>Api answer result</h3>
-      <iframe src="about:block" id="api_result" name="api_result" width="100%" height="200px"></iframe>
+      <strong>(GET) /chainconfig/{chainid}</strong>
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/chainconfig/{chainid}" />
+        <div>
+          <label>chainid:</label>
+          <input type="text" data-name="chainid" value="97" />
+        </div>
+        <input type="submit" value="send" data-type="send-form" />
+      </form>
+    </div>
+    <div>
+      <strong>(GET) /tokenconfig/{chainid}/{address}</strong>
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/tokenconfig/{chainid}/{address}" />
+        <div>
+          <label>chainid:</label>
+          <input type="text" data-name="chainid" value="97" />
+        </div>
+        <div>
+          <label>address:</label>
+          <input type="text" data-name="address" value="0xc0c3394781c23faa538a506b3c96fb59c050bed8" />
+        </div>
+        <input type="submit" value="send" data-type="send-form" />
+      </form>
+    </div>
+      <div>
+      <strong>(GET) /swapconfig/{tokenid}/{chainid}</strong>
+      <form method="get" action="#" target="api_result">
+        <input type="hidden" data-type="url-template" value="/swapconfig/{tokenid}/{chainid}" />
+        <div>
+          <label>tokenid:</label>
+          <input type="text" data-name="tokenid" value="TETHER" />
+        </div>
+        <div>
+          <label>chainid:</label>
+          <input type="text" data-name="chainid" value="97" />
+        </div>
+        <input type="submit" value="send" data-type="send-form" />
+      </form>
+    </div>
+    <div style="display: none">
+      <div id="api_result_holder">
+        <h3>Api answer result</h3>
+        <iframe src="about:block" id="api_result" name="api_result" width="100%" height="200px"></iframe>
+      </div>
     </div>
   </body>
 </html>
