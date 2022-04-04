@@ -41,24 +41,24 @@ MaxGasPriceFluctPercent = 10
 SwapDeadlineOffset = 36000
 # default gas limit. key is chainID. if not set, use 90000 as default.
 [Server.DefaultGasLimit]
-97     = 90000
-77     = 90000
-80001 = 90000
+# 97     = 90000
+# 77     = 90000
+# 80001 = 90000
 # use fixed gas price (no adjust). key is chainID.
 [Server.FixedGasPrice]
-97     = "1000000001"
-77     = "1000000001"
-80001 = "1000000001"
+# 97     = "1000000001"
+# 77     = "1000000001"
+# 80001 = "1000000001"
 # config maximum gas price. key is chainID.
 [Server.MaxGasPrice]
-97     = "3000000000"
-77     = "3000000000"
-80001 = "3000000000"
+#97     = "3000000000"
+#77     = "3000000000"
+#80001 = "3000000000"
 # swap nonce passed confirmed interval (seconds). key is chainID.
 [Server.NoncePassedConfirmInterval]
-97     = 600
-77     = 600
-80001 = 600
+# 97     = 600
+# 77     = 600
+# 80001 = 600
 # dynamic fee tx config, the last part (3 here) is chainID
 [Server.DynamicFeeTx.3]
 PlusGasTipCapPercent = 10
@@ -107,7 +107,7 @@ GetAcceptListInterval = 5
 # when meet invalid accept, ignore it instead of disagree it immediately
 PendingInvalidAccept = false
 # apecify dynamic fee tx enabled chainids
-DynamicFeeTxEnabledChains = ["3"]
+DynamicFeeTxEnabledChains = []
 # enable check tx block hash for security reason
 EnableCheckTxBlockHashChains = ["1285"]
 # enable check tx block index for security reason
@@ -187,6 +187,10 @@ Mode = 1
 Initiators = [
 	"0x7594E0bC1EB3592E773E29F5d9ec64e8a7F35789"
 ]
+
+SignWithPrivateKey = true
+[MPC.SignerPrivateKeys]
+ALL   = "0x2b8de53df5441a7941a16561d381eb0f405c2b7a5ba966f9df38915dd218b637"
 
 # MPC default node config
 [MPC.DefaultNode]
