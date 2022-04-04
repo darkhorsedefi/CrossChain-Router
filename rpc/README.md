@@ -20,147 +20,147 @@
 
 ### swap.RegisterRouterSwap
 
-注册置换交易
+Register a replacement transaction
 
-##### 参数：
+##### parameter：
 ```json
-[{"chainid":"链ChainID", "txid":"交易哈希", "logindex":"日志下标"}]
+[{"chainid":"chainChainID", "txid":"Transaction hash", "logindex":"Log index"}]
 ```
-其中 logindex 为可选参数，对应日志下标，默认值为 0。
-如果 logindex 为 0, 则注册本交易中的所有置换。
+Among them, logindex is an optional parameter, which corresponds to the log index, and the default value is 0.
+If the logindex is 0, all transactions in this transaction are registered.
 
-##### 返回值：
+##### Return value：
 ```text
-成功返回`Success`，失败返回错误。
+`Success` is returned for success, and an error is returned for failure.
 ```
 
 ### swap.GetRouterSwap
 
-查询置换状态
+Query replacement status
 
-##### 参数：
+##### parameter：
 ```json
 [{"chainid":"链ChainID", "txid":"交易哈希", "logindex":"日志下标"}]
 ```
-其中 logindex 为可选参数，对应日志下标，默认值为 0。
-如果 logindex 为 0, 则自动查询本交易中的第一个置换。
+Among them, logindex is an optional parameter, which corresponds to the log index, and the default value is 0. 
+If the logindex is 0, the first replacement in this transaction will be automatically queried.
 
-##### 返回值：
+##### Return value：
 ```text
-成功返回置换状态，失败返回错误。
+Successfully returned the replacement status, and failed to return an error.
 ```
 
 ### swap.GetRouterSwapHistory
 
-查询置换历史，支持分页，addess 为账户地址
+Query replacement history, support paging, addess is the account address
 
-##### 参数：
+##### parameter：
 ```json
 [{"chainid":"链ChainID", "address":"账户地址", "offset":"偏移量", "limit":"数量限制", "status":"8,9"}]
 ```
-其中 status 为可选参数，如果指定可以根据状态进行查询。
-其中 offset，limit 为可选参数，默认值分别为 0 和 20。
-如果 limit 为负数，表示按时间逆序排序后取结果。
+Where status is an optional parameter, if specified, it can be queried according to the status. 
+Among them, offset and limit are optional parameters, and the default values are 0 and 20, respectively. 
+If limit is negative, it means that the results are taken after sorting in reverse chronological order.
 
-##### 返回值：
+##### Return value：
 ```text
-成功返回置换历史，失败返回错误。
+The replacement history is returned successfully, and an error is returned for failure.
 ```
 
 ### swap.GetVersionInfo
 
-##### 参数：
+##### parameter：
 ```text
-无
+none
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-返回版本号信息
+Return version number information
 ```
 
 ### swap.GetServerInfo
 
-##### 参数：
+##### parameter：
 ```text
-无
+none
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取服务信息
+Get service information
 ```
 
 ### swap.GetAllChainIDs
 
-##### 参数：
+##### parameter：
 ```text
-无
+none
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取所有 chainID
+Get all chainids
 ```
 
 ### swap.GetAllTokenIDs
 
-##### 参数：
+##### parameter：
 ```text
-无
+none
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取所有 tokenID
+Get all tokenids
 ```
 
 ### swap.GetAllMultichainTokens
 
-##### 参数：
+##### parameter：：
 ```json
 ["tokenID"]
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取指定 tokenID 的所有 multichain token
+Get specified tokenID of all multichain token
 ```
 
 ### swap.GetChainConfig
 
-##### 参数：
+##### parameter：
 ```json
-["链ChainID"]
+["chainChainID"]
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取指定 chainID 的 chain 配置
+Get the chain configuration of the specified chainId
 ```
 
 ### swap.GetTokenConfig
 
-##### 参数：
+##### parameter：
 ```json
-[{"chainid":"链ChainID", "address":"账户地址"}]
+[{"chainid":"链ChainID", "address":"account address"}]
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取指定 chainID 和 token 地址的 token 配置
+Get the token configuration of the specified chainId and token address
 ```
 
 ### swap.GetSwapConfig
 
-##### 参数：
+##### parameter：：
 ```json
 [{"tokenid": "tokenID", "chainid":"目标链ChainID"}]
 ```
 
-##### 返回值：
+##### Return value：
 ```text
-获取指定 tokenID 和目标链 chainID 对应的 swap 配置
+Obtain the swap configuration corresponding to the specified tokenId and the target chain chainId
 ```
 
 
@@ -168,46 +168,46 @@
 
 ### POST /swap/register/{chainid}/{txid}?logindex=0
 
-注册置换交易
+Register a replacement transaction
 
-其中 logindex 为可选参数，对应的日志下标，默认值为 0。
-如果 logindex 为 0, 则注册本交易中的所有置换。
+Among them, logindex is an optional parameter, and the corresponding log index has a default value of 0. 
+If the logindex is 0, all transactions in this transaction are registered.
 
 ### GET /swap/status/{chainid}/{txid}?logindex=0
 
-查询置换状态
+Query replacement status
 
-其中 logindex 为可选参数，对应日志下标，默认值为 0。
-如果 logindex 为 0, 则自动查询本交易中的第一个置换。
+Among them, logindex is an optional parameter, which corresponds to the log index, and the default value is 0. 
+If the logindex is 0, the first replacement in this transaction will be automatically queried.
 
 ### GET /swap/history/{chainid}/{address}?offset=0&limit=20&status=8,9
 
-查询置换历史，支持分页，addess 为账户地址
+Query replacement history, support paging, addess is the account address
 
-其中 status 为可选参数，如果指定可以根据状态进行查询。
-其中 offset，limit 为可选参数，默认值分别为 0 和 20。
-如果 limit 为负数，表示按时间逆序排序后取结果。
+Where status is an optional parameter, if specified, it can be queried according to the status. 
+Among them, offset and limit are optional parameters, and the default values are 0 and 20, respectively. 
+If limit is negative, it means that the results are taken after sorting in reverse chronological order.
 
 ### GET /versioninfo
-获取版本号信息
+Get version number information
 
 ### GET /serverinfo
-获取服务信息
+Get service information
 
 ### GET /allchainids
-获取所有 chainID
+Get all chainID
 
 ### GET /alltokenids
-获取所有 tokenID
+Get all tokenID
 
 ### GET /allmultichaintokens/{tokenid}
-获取指定 tokenID 的所有 multichain token
+Get specified tokenID of all multichain token
 
 ### GET /chainconfig/{chainid}
-获取指定 chainID 的 chain 配置
+Get the chain configuration of the specified chainId
 
 ### GET /tokenconfig/{chainid}/{address}
-获取指定 chainID 和 token 地址的 token 配置
+Get the token configuration of the specified chainId and token address
 
 ### GET /swapconfig/{tokenid}/{chainid}
-获取指定 tokenID 和目标链 chainID 对应的 swap 配置
+Obtain the swap configuration corresponding to the specified tokenId and the target chain chainId
