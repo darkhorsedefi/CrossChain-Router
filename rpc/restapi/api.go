@@ -204,46 +204,47 @@ func GetSwapConfigHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+type TokenChainInfo struct {
+  ChainID string `json:"chainId"`
+  RouterConfig interface{} `json:"router"`
+  AnyToken interface{} `json:"anyswapToken"`
+  SwapConfig interface{} `json:"swapConfig"`
+}
 type TokenMultichain struct {
-  tokenID string `json:"tokenID"`
-  multichainTokens interface{} `json:"multichainTokens"`
+  TokenID string `json:"tokenID"`
+  MultichainTokens []TokenChainInfo `json:"multichainTokens"`
 }
 type AllConfigs struct {
-	allMultichainTokens []TokenMultichain `json:"allMultichainTokens"`
+	AllMultichainTokens []TokenMultichain `json:"allMultichainTokens"`
 }
 
 func GetAllConfig(w http.ResponseWriter, r *http.Request) {
-  // vars := mux.Vars(r)
-  // chainID := vars["chainid"]
   allTokenIDs := router.AllTokenIDs
-  writeResponse(w, allTokenIDs, nil)
+
   retValue := AllConfigs{}
-  log.Info(">>>", "allTokenIDs", allTokenIDs)
   for _, tokenID := range allTokenIDs {
     allMultichainTokens := router.GetCachedMultichainTokens(tokenID)
-    writeResponse(w, allMultichainTokens, nil)
-    log.Info(">>>", "tokenID", tokenID, "allMultichainTokens", allMultichainTokens)
+    
     tmc := TokenMultichain{}
-    tmc.tokenID = tokenID
-    tmc.multichainTokens = allMultichainTokens
-    log.Info(">>>", "tmc", tmc)
-    writeResponse(w, tmc, nil)
-    retValue.allMultichainTokens = append(retValue.allMultichainTokens, tmc)
+    tmc.TokenID = tokenID
+    for chainID, anyswapTokenAddress := range allMultichainTokens {
+      tokenChainConfig := TokenChainInfo{}
+      tokenChainConfig.ChainID = chainID
+      bridge := router.GetBridgeByChainID(chainID)
+      if bridge != nil {
+        chainConfig := swapapi.ConvertChainConfig(bridge.GetChainConfig())
+        anyTokenConfig := swapapi.ConvertTokenConfig(bridge.GetTokenConfig(anyswapTokenAddress))
+        swapConfig := swapapi.ConvertSwapConfig(tokens.GetSwapConfig(tokenID, chainID))
+        tokenChainConfig.RouterConfig = chainConfig
+        tokenChainConfig.AnyToken = anyTokenConfig
+        tokenChainConfig.SwapConfig = swapConfig
+      }
+      tmc.MultichainTokens = append(tmc.MultichainTokens, tokenChainConfig)
+    }
+
+    retValue.AllMultichainTokens = append(retValue.AllMultichainTokens, tmc)
     
   }
-  log.Info(">>>", "retValue", retValue)
+
   writeResponse(w, retValue, nil)
-  /*
-  jsonData, err := json.Marshal(retValue)
-  log.Info(">>>", "jsonData", jsonData)
-	if err != nil {
-		writeErrResponse(w, err)
-		return
-	}
-  w.Header().Set("Content-Type", "application/json")
-  
-	w.WriteHeader(http.StatusOK)
-	w.Write(jsonData)
-	*/
-	//writeResponse(w, allChainIDs, nil)
 }

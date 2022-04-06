@@ -4,3 +4,13 @@
 19:44:00.969712 version@stat F·[] S·0B[] Sc·[]
 19:44:01.019249 db@janitor F·2 G·0
 19:44:01.019786 db@open done T·54.5645ms
+=============== Apr 6, 2022 (MSK) ===============
+16:47:03.066891 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:47:03.069866 version@stat F·[] S·0B[] Sc·[]
+16:47:03.069866 db@open opening
+16:47:03.070385 journal@recovery F·1
+16:47:03.071633 journal@recovery recovering @1
+16:47:03.184624 memdb@flush created L0@2 N·1 S·206B "rou..ier,v1":"rou..ier,v1"
+16:47:03.187682 version@stat F·[1] S·206B[206B] Sc·[0.25]
+16:47:03.495915 db@janitor F·3 G·0
+16:47:03.495915 db@open done T·426.0484ms
