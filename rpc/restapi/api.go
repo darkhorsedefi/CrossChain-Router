@@ -221,7 +221,7 @@ type AllConfigs struct {
 func GetAllConfig(w http.ResponseWriter, r *http.Request) {
   allTokenIDs := router.AllTokenIDs
 
-  retValue := AllConfigs{}
+  var retValue []TokenMultichain
   for _, tokenID := range allTokenIDs {
     allMultichainTokens := router.GetCachedMultichainTokens(tokenID)
     
@@ -242,7 +242,7 @@ func GetAllConfig(w http.ResponseWriter, r *http.Request) {
       tmc.MultichainTokens = append(tmc.MultichainTokens, tokenChainConfig)
     }
 
-    retValue.AllMultichainTokens = append(retValue.AllMultichainTokens, tmc)
+    retValue = append(retValue, tmc)
     
   }
 
