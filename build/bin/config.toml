@@ -6,12 +6,8 @@ SwapType = "erc20swap"
 # router sever config (server only)
 [Server]
 # administrators who can do admin work
-Admins = [
-	"0x7594E0bC1EB3592E773E29F5d9ec64e8a7F35789"
-]
-Assistants = [
-	"0x7594E0bC1EB3592E773E29F5d9ec64e8a7F35789"
-]
+Admins = []
+Assistants = []
 
 # chain id black list of string array
 ChainIDBlackList = []
@@ -142,8 +138,8 @@ MIM  = ["0x2222222222222222222222222222222222222222"]
 # OnChain config
 [OnChain]
 # 0: disable, min:600, unit is seconds
-ReloadCycle = 0
-Contract = "0xf37f50d6bcff79e7f4f45ab87de136e05559c838"
+ReloadCycle = 600
+#Contract = "0xf37f50d6bcff79e7f4f45ab87de136e05559c838"
 APIAddress = ["https://data-seed-prebsc-1-s1.binance.org:8545"]
 #WSServers = ["ws://127.0.0.1:7711"]
 
@@ -184,13 +180,10 @@ TotalOracles = 0
 Mode = 1
 
 # initiators of mpc sign
-Initiators = [
-	"0x7594E0bC1EB3592E773E29F5d9ec64e8a7F35789"
-]
+Initiators = []
 
 SignWithPrivateKey = true
 [MPC.SignerPrivateKeys]
-ALL   = "0x2b8de53df5441a7941a16561d381eb0f405c2b7a5ba966f9df38915dd218b637"
 
 # MPC default node config
 [MPC.DefaultNode]
@@ -201,8 +194,8 @@ SignGroups = [
 ]
 
 # mpc user keystore and password file (suggest using absolute path)
-KeystoreFile = "d:\\WORK\\WebServers\\home\\localhost\\www\\main\\evmbridge\\CrossChain-Router\\testkey.json"
-PasswordFile = "/home/xxx/accounts/password1"
+#KeystoreFile = "d:\\WORK\\WebServers\\home\\localhost\\www\\main\\evmbridge\\CrossChain-Router\\testkey.json"
+#PasswordFile = "/home/xxx/accounts/password1"
 
 # mpc backend node (gmpc node RPC address)
 RPCAddress = "http://127.0.0.1:2921"
