@@ -95,6 +95,14 @@ var (
 		Name:  "keystore",
 		Usage: "keystore file",
 	}
+  ConfigAddressFlag = &cli.StringFlag{
+    Name:  "configaddress",
+    Usage: "configaddress 0x00000000000000000000000000000000",
+  }
+  PrivateKeyFlag = &cli.StringFlag{
+    Name:  "privatekey",
+    Usage: "privatekey xxxxxxxxxxxxxxxxxxxxxx",
+  }
 	// PasswordFileFlag --password
 	PasswordFileFlag = &cli.StringFlag{
 		Name:  "password",
@@ -163,4 +171,12 @@ func GetDataDir(ctx *cli.Context) string {
 // GetConfigFilePath specified by `-c|--config`
 func GetConfigFilePath(ctx *cli.Context) string {
 	return ctx.String(ConfigFileFlag.Name)
+}
+
+func GetConfigAddress(ctx *cli.Context) string {
+  return ctx.String(ConfigAddressFlag.Name)
+}
+
+func GetPrivateKey(ctx *cli.Context) string {
+  return ctx.String(PrivateKeyFlag.Name)
 }

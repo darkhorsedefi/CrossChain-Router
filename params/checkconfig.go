@@ -69,7 +69,9 @@ func (config *RouterConfig) CheckConfig(isServer bool) (err error) {
 	}
 
 	if config.Onchain == nil {
-		return errors.New("server must config 'Onchain'")
+    //if ctx.String(utils.ConfigAddressFlag) == nil {
+      return errors.New("server must config 'Onchain'")
+    //}
 	}
 	err = config.Onchain.CheckConfig()
 	if err != nil {

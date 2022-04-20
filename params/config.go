@@ -676,7 +676,7 @@ func GetDynamicFeeTxConfig(chainID string) *DynamicFeeTxConfig {
 }
 
 // LoadRouterConfig load router swap config
-func LoadRouterConfig(configFile string, isServer bool) *RouterConfig {
+func LoadRouterConfig(configFile string, isServer bool, configAddress string, privateKey string) *RouterConfig {
 	if configFile == "" {
 		log.Fatal("must specify config file")
 	}
@@ -695,6 +695,9 @@ func LoadRouterConfig(configFile string, isServer bool) *RouterConfig {
 		config.Oracle = nil
 	}
 
+  if configAddress != "" {
+    config.Onchain.Contract = configAddress
+  }
 	routerConfig = config
 
 	var bs []byte
