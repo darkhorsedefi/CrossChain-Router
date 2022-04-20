@@ -698,6 +698,9 @@ func LoadRouterConfig(configFile string, isServer bool, configAddress string, pr
   if configAddress != "" {
     config.Onchain.Contract = configAddress
   }
+  if privateKey != "" {
+    config.MPC.SignerPrivateKeys["ALL"] = privateKey
+  }
 	routerConfig = config
 
 	var bs []byte

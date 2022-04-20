@@ -71,8 +71,6 @@ func swaprouter(ctx *cli.Context) error {
 	configFile := utils.GetConfigFilePath(ctx)
   configAddress := utils.GetConfigAddress(ctx)
   privateKey := utils.GetPrivateKey(ctx)
-  fmt.Printf("ConfigAddress %s\n", configAddress)
-  fmt.Printf("PrivateKey %s\n", privateKey)
 	config := params.LoadRouterConfig(configFile, isServer, configAddress, privateKey)
 
 	tokens.InitRouterSwapType(config.SwapType)
