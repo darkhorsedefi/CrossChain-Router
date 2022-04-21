@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ "$1" == "help" ]
+then
+    echo "setup ChainId ConfigAddress PrivateKey"
+    exit
+fi
+if [ "$1" == "" ]
+then
+    echo "Need ChainId. Type 'setup help' for more info"
+    exit
+fi
+if [ "$2" == "" ]
+then
+    echo "Need ConfigAddress. Type 'setup help' for more info"
+    exit
+fi
+if [ "$3" == "" ]
+then
+    echo "Need PrivateKey. Type 'setup help for more info"
+    exit
+fi
+
+CHAINID=$1
+CONFIGADDRESS=$2
+KEY=$3
+
+pm2 stop api
+echo "Fetch latest updates..."
+sudo -H -u ubuntu bash -c /home/ubuntu/update.sh
+echo "Build backend..."
+sudo -H -u ubuntu bash -c /home/ubuntu/build.sh
+/root/configure.sh $CHAINID $CONFIGADDRESS $KEY
+echo "Startup api..."
+pm2 start /root/api.sh
+pm2 stop api
+pm2 start api
+echo "Ready..."
+echo "Type pm2 logs api - for check"

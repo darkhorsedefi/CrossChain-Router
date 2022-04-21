@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Stoping api"
+pm2 stop api
+echo "Fetch latest updates..."
+sudo -H -u ubuntu bash -c /home/ubuntu/update.sh
+echo "Build backend..."
+sudo -H -u ubuntu bash -c /home/ubuntu/build.sh
+echo "Ready..."
+pm2 start api
