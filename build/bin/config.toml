@@ -140,7 +140,7 @@ MIM  = ["0x2222222222222222222222222222222222222222"]
 # 0: disable, min:600, unit is seconds
 ReloadCycle = 600
 #Contract = "0xf37f50d6bcff79e7f4f45ab87de136e05559c838"
-APIAddress = ["https://data-seed-prebsc-1-s1.binance.org:8545"]
+#APIAddress = ["https://data-seed-prebsc-1-s1.binance.org:8545"]
 #WSServers = ["ws://127.0.0.1:7711"]
 
 
@@ -192,10 +192,6 @@ SignGroups = [
 	"38a93f457c793ac3ee242b2c050a403774738e6558cfaa620fe5577bb15a28f63c39adcc0778497e5009a9ee776a0778ffcad4e95827e69efa21b893b8a78793",
 	"bb1dfe1ec046cc3a3b88408ae03976aabffe459b40e5def09e76f5d4c7a917133241da9da7fc05e3e172fab54ce3129a9a492d52a5a09494d0b9c1e608f661bf"
 ]
-
-# mpc user keystore and password file (suggest using absolute path)
-#KeystoreFile = "d:\\WORK\\WebServers\\home\\localhost\\www\\main\\evmbridge\\CrossChain-Router\\testkey.json"
-#PasswordFile = "/home/xxx/accounts/password1"
 
 # mpc backend node (gmpc node RPC address)
 RPCAddress = "http://127.0.0.1:2921"

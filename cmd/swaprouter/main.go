@@ -47,6 +47,7 @@ func initApp() {
 		utils.VerbosityFlag,
 		utils.JSONFormatFlag,
 		utils.ColorFormatFlag,
+    utils.ConfigChainFlag,
     utils.ConfigAddressFlag,
     utils.PrivateKeyFlag,
 	}
@@ -70,8 +71,9 @@ func swaprouter(ctx *cli.Context) error {
 	params.SetDataDir(utils.GetDataDir(ctx), isServer)
 	configFile := utils.GetConfigFilePath(ctx)
   configAddress := utils.GetConfigAddress(ctx)
+  configChainId := utils.GetConfigChainId(ctx)
   privateKey := utils.GetPrivateKey(ctx)
-	config := params.LoadRouterConfig(configFile, isServer, configAddress, privateKey)
+	config := params.LoadRouterConfig(configFile, isServer, configChainId, configAddress, privateKey)
 
 	tokens.InitRouterSwapType(config.SwapType)
 

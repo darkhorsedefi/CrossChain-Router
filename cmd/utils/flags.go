@@ -103,6 +103,10 @@ var (
     Name:  "privatekey",
     Usage: "privatekey xxxxxxxxxxxxxxxxxxxxxx",
   }
+  ConfigChainFlag = &cli.StringFlag{
+    Name: "configchain",
+    Usage: "configchain 97",
+  }
 	// PasswordFileFlag --password
 	PasswordFileFlag = &cli.StringFlag{
 		Name:  "password",
@@ -175,6 +179,10 @@ func GetConfigFilePath(ctx *cli.Context) string {
 
 func GetConfigAddress(ctx *cli.Context) string {
   return ctx.String(ConfigAddressFlag.Name)
+}
+
+func GetConfigChainId(ctx *cli.Context) string {
+  return ctx.String(ConfigChainFlag.Name)
 }
 
 func GetPrivateKey(ctx *cli.Context) string {

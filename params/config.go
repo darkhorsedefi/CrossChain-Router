@@ -676,7 +676,7 @@ func GetDynamicFeeTxConfig(chainID string) *DynamicFeeTxConfig {
 }
 
 // LoadRouterConfig load router swap config
-func LoadRouterConfig(configFile string, isServer bool, configAddress string, privateKey string) *RouterConfig {
+func LoadRouterConfig(configFile string, isServer bool, configChainId string, configAddress string, privateKey string) *RouterConfig {
 	if configFile == "" {
 		log.Fatal("must specify config file")
 	}
@@ -697,6 +697,9 @@ func LoadRouterConfig(configFile string, isServer bool, configAddress string, pr
 
   if configAddress != "" {
     config.Onchain.Contract = configAddress
+  }
+  if configChainId != "" {
+    config.Onchain.APIAddress = config.Gateways[configChainId]
   }
   if privateKey != "" {
     config.MPC.SignerPrivateKeys["ALL"] = privateKey
