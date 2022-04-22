@@ -105,21 +105,19 @@ PendingInvalidAccept = false
 # apecify dynamic fee tx enabled chainids
 DynamicFeeTxEnabledChains = []
 # enable check tx block hash for security reason
-EnableCheckTxBlockHashChains = ["1285"]
+EnableCheckTxBlockHashChains = ["ALL"]
 # enable check tx block index for security reason
-EnableCheckTxBlockIndexChains = ["1", "56"]
+EnableCheckTxBlockIndexChains = ["ALL"]
 # chains don't use fromChainID from receipt log
-DisableUseFromChainIDInReceiptChains = ["1666600000"]
+DisableUseFromChainIDInReceiptChains = []
 # allow call into router from contract
 AllowCallByContract = false
 # min reserve fee. key is chainID. defaults to 1e16 wei
 [Extra.MinReserveFee]
-97     = 100000000000000000
-80001 = 100000000000000000
+ALL     = 100000000000000000
 # base fee percent, must be in range [-90, 500]. key is dest chainID
 [Extra.BaseFeePercent]
-97     = 100
-80001 = 50
+ALL     = 100
 # customs, key is chainID. value is a mapping.
 [Extra.Customs.1313161554]
 sendtxTimeout = "60"

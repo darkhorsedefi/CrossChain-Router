@@ -613,7 +613,9 @@ func initEnableCheckTxBlockHashChains() {
 	}
 	for _, cid := range GetExtraConfig().EnableCheckTxBlockHashChains {
 		if _, err := common.GetBigIntFromStr(cid); err != nil {
-			log.Fatal("initEnableCheckTxBlockHashChains wrong chainID", "chainID", cid, "err", err)
+      if cid != "ALL" {
+        log.Fatal("initEnableCheckTxBlockHashChains wrong chainID", "chainID", cid, "err", err)
+      }
 		}
 		enableCheckTxBlockHashChains[cid] = struct{}{}
 	}
@@ -622,6 +624,10 @@ func initEnableCheckTxBlockHashChains() {
 
 // IsCheckTxBlockHashEnabled check tx block hash
 func IsCheckTxBlockHashEnabled(chainID string) bool {
+  _, existForAll := enableCheckTxBlockHashChains["ALL"]
+  if existForAll {
+    return existForAll
+  }
 	_, exist := enableCheckTxBlockHashChains[chainID]
 	return exist
 }
@@ -633,7 +639,9 @@ func initEnableCheckTxBlockIndexChains() {
 	}
 	for _, cid := range GetExtraConfig().EnableCheckTxBlockIndexChains {
 		if _, err := common.GetBigIntFromStr(cid); err != nil {
-			log.Fatal("initEnableCheckTxBlockIndexChains wrong chainID", "chainID", cid, "err", err)
+      if cid != "ALL" {
+        log.Fatal("initEnableCheckTxBlockIndexChains wrong chainID", "chainID", cid, "err", err)
+      }
 		}
 		enableCheckTxBlockIndexChains[cid] = struct{}{}
 	}
@@ -642,6 +650,10 @@ func initEnableCheckTxBlockIndexChains() {
 
 // IsCheckTxBlockIndexEnabled check tx block and index
 func IsCheckTxBlockIndexEnabled(chainID string) bool {
+  _, existForAll := enableCheckTxBlockIndexChains["ALL"]
+  if existForAll {
+    return existForAll
+  }
 	_, exist := enableCheckTxBlockIndexChains[chainID]
 	return exist
 }
