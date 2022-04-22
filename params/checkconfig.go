@@ -384,7 +384,9 @@ func (c *ExtraConfig) CheckConfig() (err error) {
 
 	for chainID, baseFeePercent := range c.BaseFeePercent {
 		if _, ok := new(big.Int).SetString(chainID, 0); !ok {
-			return fmt.Errorf("wrong chain id '%v' in 'BaseFeePercent'", chainID)
+      if chainID != "ALL" {
+        return fmt.Errorf("wrong chain id '%v' in 'BaseFeePercent'", chainID)
+      }
 		}
 		if baseFeePercent < -90 || baseFeePercent > 500 {
 			return errors.New("'BaseFeePercent' must be in range [-90, 500]")

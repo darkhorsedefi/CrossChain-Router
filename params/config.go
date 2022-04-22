@@ -299,6 +299,9 @@ func GetMinReserveFee(chainID string) *big.Int {
 	if minReserve, exist := GetExtraConfig().MinReserveFee[chainID]; exist {
 		return new(big.Int).SetUint64(minReserve)
 	}
+  if minReserve, exist := GetExtraConfig().MinReserveFee["ALL"]; exist {
+		return new(big.Int).SetUint64(minReserve)
+	}
 	return nil
 }
 
@@ -309,6 +312,9 @@ func GetBaseFeePercent(chainID string) int64 {
 		return 0
 	}
 	if baseFeePercent, exist := GetExtraConfig().BaseFeePercent[chainID]; exist {
+		return baseFeePercent
+	}
+  if baseFeePercent, exist := GetExtraConfig().BaseFeePercent["ALL"]; exist {
 		return baseFeePercent
 	}
 	return 0

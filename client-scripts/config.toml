@@ -146,16 +146,46 @@ ReloadCycle = 600
 
 # Gateways config. key is chainID
 [Gateways]
-97     = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]
-77     = ["https://sokol.poa.network"]
-80001 = ["https://rpc-mumbai.maticvigil.com"]
+25          = ["https://evm.cronos.org"]                                        # Cronos
+56          = ["https://bsc-dataseed.binance.org"]                              # Binance
+137         = ["https://rpc-mainnet.matic.network"]                             # Polygon
+43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
+250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
+122         = ["https://rpc.fuse.io/"]                                          # Fuse
+1285        = ["https://rpc.moonriver.moonbeam.network"]                        # Moonriver
+1666600000  = ["https://api.harmony.one"]                                       # Harmony
+1313161554  = ["https://mainnet.aurora.dev"]                                    # Aurora
+1           = ["https://mainnet.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium
+42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
+100         = ["https://rpc.xdaichain.com/"]                                    # DAI
+97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
+77          = ["https://sokol.poa.network"]                                     # DAI testnet
+80001       = ["https://rpc-mumbai.maticvigil.com"]                             # Polygon testnet
+4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
+4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
+421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
-97     = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]
-77     = ["https://sokol.poa.network"]
-80001 = ["https://rpc-mumbai.maticvigil.com"]
+25          = ["https://evm.cronos.org"]                                        # Cronos
+56          = ["https://bsc-dataseed.binance.org"]                              # Binance
+137         = ["https://rpc-mainnet.matic.network"]                             # Polygon
+43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
+250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
+122         = ["https://rpc.fuse.io/"]                                          # Fuse
+1285        = ["https://rpc.moonriver.moonbeam.network"]                        # Moonriver
+1666600000  = ["https://api.harmony.one"]                                       # Harmony
+1313161554  = ["https://mainnet.aurora.dev"]                                    # Aurora
+1           = ["https://mainnet.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium
+42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
+100         = ["https://rpc.xdaichain.com/"]                                    # DAI
+97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
+77          = ["https://sokol.poa.network"]                                     # DAI testnet
+80001       = ["https://rpc-mumbai.maticvigil.com"]                             # Polygon testnet
+4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
+4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
+421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
 
 
 # MPC config
