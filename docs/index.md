@@ -26,26 +26,31 @@
 <br />
 **`rpc/`**:
 <br />
+
 - `client/` - provides methods to do http GET / POST request
-<br />
+  <br />
 - `restapi/` - provides RESTful RPC service
-<br />
+  <br />
 - `rpcapi/` - provides JSON RPC service
-<br />
+  <br />
 - `server/` - provides JSON/RESTful RPC service
+  <br />
+
+**`tokens/`**: - defines the common interfaces and supported bridges in sub directories
 <br />
-**`tokens/`** - defines the common interfaces and supported bridges in sub directories
-<br />
+
 - `eth/` - implements the bridge interfaces to support routering
-<br />
+  <br />
+
 **`tools/`** - something like `common/`
 <br />
 **`types/`** - defines the eth-like core types (Transaction, etc) and RPC result types
 <br />
-**`worker/`** - includes all the tasks and jobs to process router swaps. More info in `worker/doc.go`
+**`worker/`** - includes all the tasks and jobs to process router swaps. More info in`worker/doc.go`
 <br />
 
 ---
+
 ### Usefull
 
 #### fees
