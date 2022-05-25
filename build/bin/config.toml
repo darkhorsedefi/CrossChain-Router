@@ -67,9 +67,9 @@ MaxGasFeeCap         = "10000000000"
 # DBURLs is prefered if exists. forbids set both DBURL and DBURLs.
 DBURL = "localhost:27017"
 #DBURLs = ["localhost:27017"]
-DBName = "proxy"
-UserName = "myUserAdmin"
-Password = "abc123"
+DBName = "admin"
+UserName = "admin"
+Password = "Ah28debMb72JwmH53"
 
 # bridge API service
 [Server.APIServer]
@@ -109,7 +109,7 @@ EnableCheckTxBlockHashChains = ["ALL"]
 # enable check tx block index for security reason
 EnableCheckTxBlockIndexChains = ["ALL"]
 # chains don't use fromChainID from receipt log
-DisableUseFromChainIDInReceiptChains = ["1666600000"]
+DisableUseFromChainIDInReceiptChains = []
 # allow call into router from contract
 AllowCallByContract = false
 # min reserve fee. key is chainID. defaults to 1e16 wei
@@ -117,7 +117,7 @@ AllowCallByContract = false
 ALL     = 10000000000000000
 # base fee percent, must be in range [-90, 500]. key is dest chainID
 [Extra.BaseFeePercent]
-ALL          = 50
+ALL     = 100
 # customs, key is chainID. value is a mapping.
 [Extra.Customs.1313161554]
 sendtxTimeout = "60"
@@ -156,12 +156,14 @@ ReloadCycle = 600
 1           = ["https://mainnet.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium
 42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
 100         = ["https://rpc.xdaichain.com/"]                                    # DAI
-97          = ["https://data-seed-prebsc-1-s2.binance.org:8545/"]               # Binance testnet
+96   		= ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
+97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
-80001       = ["https://rpc-mumbai.maticvigil.com"]                             # Polygon testnet
+80001       = ["https://matic-mumbai.chainstacklabs.com"]                       # Polygon testnet
 4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
 4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
 421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
+
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
@@ -177,9 +179,10 @@ ReloadCycle = 600
 1           = ["https://mainnet.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium
 42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
 100         = ["https://rpc.xdaichain.com/"]                                    # DAI
+96   		= ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
 97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
-80001       = ["https://rpc-mumbai.maticvigil.com"]                             # Polygon testnet
+80001       = ["https://matic-mumbai.chainstacklabs.com"]                       # Polygon testnet
 4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
 4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
 421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
