@@ -146,7 +146,7 @@ ReloadCycle = 600
 [Gateways]
 25          = ["https://evm.cronos.org"]                                        # Cronos
 56          = ["https://bsc-dataseed.binance.org"]                              # Binance
-137         = ["https://rpc-mainnet.matic.network"]                             # Polygon
+137         = ["https://polygon-rpc.com"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
 122         = ["https://rpc.fuse.io/"]                                          # Fuse
@@ -170,7 +170,7 @@ ReloadCycle = 600
 [GatewaysExt]
 25          = ["https://evm.cronos.org"]                                        # Cronos
 56          = ["https://bsc-dataseed.binance.org"]                              # Binance
-137         = ["https://rpc-mainnet.matic.network"]                             # Polygon
+137         = ["https://polygon-rpc.com"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
 122         = ["https://rpc.fuse.io/"]                                          # Fuse
