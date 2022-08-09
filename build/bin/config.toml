@@ -156,7 +156,7 @@ ReloadCycle = 600
 1           = ["https://mainnet.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium
 42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
 100         = ["https://rpc.gnosischain.com"]                                   # DAI
-96   	    = ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
+96   	      = ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
 180   	    = ["https://node1.amechain.io"]        								# AME Chain Mainnet
 97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
@@ -165,6 +165,7 @@ ReloadCycle = 600
 5           = ["https://rpc.goerli.mudit.blog/"]  # Etherium (Goerli)
 4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
 421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
+1285        = ["https://rpc.api.moonriver.moonbeam.network"]                    # Moonriver
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
@@ -190,6 +191,7 @@ ReloadCycle = 600
 5           = ["https://rpc.goerli.mudit.blog/"]  # Etherium (Goerli)
 4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
 421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
+1285        = ["https://rpc.api.moonriver.moonbeam.network"]                    # Moonriver
 
 
 # MPC config
