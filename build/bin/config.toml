@@ -165,7 +165,6 @@ ReloadCycle = 600
 5           = ["https://rpc.goerli.mudit.blog/"]  # Etherium (Goerli)
 4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
 421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
-1285        = ["https://rpc.api.moonriver.moonbeam.network"]                    # Moonriver
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
@@ -191,7 +190,6 @@ ReloadCycle = 600
 5           = ["https://rpc.goerli.mudit.blog/"]  # Etherium (Goerli)
 4002        = ["https://rpc.testnet.fantom.network/"]                           # Fantom testnet
 421611      = ["https://rinkeby.arbitrum.io/rpc"]                               # Arbitrum Testnet (Rinkeby)
-1285        = ["https://rpc.api.moonriver.moonbeam.network"]                    # Moonriver
 
 
 # MPC config
