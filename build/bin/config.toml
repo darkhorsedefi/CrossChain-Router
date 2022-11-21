@@ -168,6 +168,7 @@ ReloadCycle = 600
 10      	= ["https://mainnet.optimism.io"]                               	# Optimist
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
+420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
@@ -196,6 +197,7 @@ ReloadCycle = 600
 10      	= ["https://mainnet.optimism.io"]                               	# Optimist
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
+420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
 
 
 # MPC config
