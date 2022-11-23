@@ -327,7 +327,7 @@ func (b *Bridge) checkCoinBalance(sender string, needValue *big.Int) (err error)
 		time.Sleep(retryRPCInterval)
 	}
 	if err == nil && balance.Cmp(needValue) < 0 {
-		return fmt.Errorf("not enough coin balance. %v < %v", balance, needValue)
+		return fmt.Errorf("not enough coin balance. %v < %v. Sender: %v", balance, needValue, sender)
 	}
 	if err != nil {
 		log.Warn("get balance error", "sender", sender, "err", err)
