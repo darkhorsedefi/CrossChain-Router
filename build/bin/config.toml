@@ -145,7 +145,7 @@ ReloadCycle = 600
 # Gateways config. key is chainID
 [Gateways]
 25          = ["https://evm.cronos.org"]                                        # Cronos
-56          = ["https://bsc-dataseed.binance.org"]                              # Binance
+56          = ["https://rpc.ankr.com/bsc"]                              # Binance
 137         = ["https://rpc.ankr.com/polygon"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
@@ -174,7 +174,7 @@ ReloadCycle = 600
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
 25          = ["https://evm.cronos.org"]                                        # Cronos
-56          = ["https://bsc-dataseed.binance.org"]                              # Binance
+56          = ["https://rpc.ankr.com/bsc"]                              # Binance
 137         = ["https://rpc.ankr.com/polygon"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
