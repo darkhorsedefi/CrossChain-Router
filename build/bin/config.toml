@@ -145,7 +145,7 @@ ReloadCycle = 600
 # Gateways config. key is chainID
 [Gateways]
 25          = ["https://evm.cronos.org"]                                        # Cronos
-56          = ["https://rpc.ankr.com/bsc"]                              # Binance
+56          = ["https://rpc.ankr.com/bsc"]                              		# Binance
 137         = ["https://rpc.ankr.com/polygon"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
@@ -169,12 +169,13 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
+2021      = ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
 25          = ["https://evm.cronos.org"]                                        # Cronos
-56          = ["https://rpc.ankr.com/bsc"]                              # Binance
+56          = ["https://rpc.ankr.com/bsc"]                              		# Binance
 137         = ["https://rpc.ankr.com/polygon"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
@@ -198,6 +199,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
+2021      = ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
 
 
 # MPC config
