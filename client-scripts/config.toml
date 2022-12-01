@@ -158,7 +158,7 @@ ReloadCycle = 600
 100         = ["https://rpc.gnosischain.com"]                                   # DAI
 96   	    = ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
 180   	    = ["https://node1.amechain.io"]        								# AME Chain Mainnet
-97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
+97          = ["https://bsc-testnet.public.blastapi.io"]               			# Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
 80001       = ["https://matic-mumbai.chainstacklabs.com"]                       # Polygon testnet
 4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
@@ -169,7 +169,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
-2021      = ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
+2021      	= ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
@@ -187,7 +187,7 @@ ReloadCycle = 600
 100         = ["https://rpc.gnosischain.com"]                                   # DAI
 96   	    = ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
 180   	    = ["https://node1.amechain.io"]        								# AME Chain Mainnet
-97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
+97          = ["https://bsc-testnet.public.blastapi.io"]               			# Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
 80001       = ["https://matic-mumbai.chainstacklabs.com"]                       # Polygon testnet
 4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
@@ -198,7 +198,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
-2021      = ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
+2021      	= ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
 
 
 # MPC config
