@@ -169,7 +169,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
-2021      = ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
+2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
@@ -199,7 +199,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
-2021      = ["https://edgeware-rpc.dwellir.com"]                        		# Edgeware Chain
+2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
 
 
 # MPC config
