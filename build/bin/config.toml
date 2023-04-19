@@ -170,7 +170,7 @@ ReloadCycle = 600
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
 2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
-11119       = ["https://rpc.hashbit.org"]                           # Hashbit
+11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
 
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
@@ -201,7 +201,7 @@ ReloadCycle = 600
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
 2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
-11119       = ["https://rpc.hashbit.org"]                           # Hashbit
+11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
 
 
 # MPC config
