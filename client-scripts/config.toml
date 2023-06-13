@@ -145,20 +145,20 @@ ReloadCycle = 600
 # Gateways config. key is chainID
 [Gateways]
 25          = ["https://evm.cronos.org"]                                        # Cronos
-56          = ["https://rpc.ankr.com/bsc"]                              		# Binance
-137         = ["https://rpc.ankr.com/polygon"]                             		# Polygon
+56          = ["https://rpc.ankr.com/bsc/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"]                              		# Binance
+137         = ["https://rpc.ankr.com/polygon/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
 122         = ["https://rpc.fuse.io/"]                                          # Fuse
 1285        = ["https://rpc.moonriver.moonbeam.network"]                        # Moonriver
 1666600000  = ["https://api.harmony.one"]                                       # Harmony
 1313161554  = ["https://mainnet.aurora.dev"]                                    # Aurora
-1           = ["https://rpc.ankr.com/eth"] 										# Etherium
+1           = ["https://rpc.ankr.com/eth/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"] 										# Etherium
 42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
 100         = ["https://rpc.gnosischain.com"]                                   # DAI
 96   	    = ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
 180   	    = ["https://node1.amechain.io"]        								# AME Chain Mainnet
-97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
+97          = ["https://rpc.ankr.com/bsc_testnet_chapel/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"]               # Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
 80001       = ["https://matic-mumbai.chainstacklabs.com"]                       # Polygon testnet
 4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
@@ -171,24 +171,26 @@ ReloadCycle = 600
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
 2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
 11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
+40821       = ["https://mainnet-rpc.fokawa.com"] # Fokawa mainnet
+5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
 25          = ["https://evm.cronos.org"]                                        # Cronos
-56          = ["https://rpc.ankr.com/bsc"]                              		# Binance
-137         = ["https://rpc.ankr.com/polygon"]                             		# Polygon
+56          = ["https://rpc.ankr.com/bsc/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"]                              		# Binance
+137         = ["https://rpc.ankr.com/polygon/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"]                             		# Polygon
 43114       = ["https://api.avax.network/ext/bc/C/rpc"]                         # Avalanche
 250         = ["https://rpc.ftm.tools/"]                                        # Fantom Opera
 122         = ["https://rpc.fuse.io/"]                                          # Fuse
 1285        = ["https://rpc.moonriver.moonbeam.network"]                        # Moonriver
 1666600000  = ["https://api.harmony.one"]                                       # Harmony
 1313161554  = ["https://mainnet.aurora.dev"]                                    # Aurora
-1           = ["https://rpc.ankr.com/eth"] # Etherium
+1           = ["https://rpc.ankr.com/eth/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"] # Etherium
 42161       = ["https://arb1.arbitrum.io/rpc"]                                  # Arbitrum
 100         = ["https://rpc.gnosischain.com"]                                   # DAI
 96   	    = ["https://rpc.nextsmartchain.com"]        						# Next Smart Chain
 180   	    = ["https://node1.amechain.io"]        								# AME Chain Mainnet
-97          = ["https://data-seed-prebsc-1-s1.binance.org:8545/"]               # Binance testnet
+97          = ["https://rpc.ankr.com/bsc_testnet_chapel/9cc6ad1c8e147b4653fcd1e522a40ff5b96ea2f79f98c40aede8308c9dc7ce5d"]               # Binance testnet
 77          = ["https://sokol.poa.network"]                                     # DAI testnet
 80001       = ["https://matic-mumbai.chainstacklabs.com"]                       # Polygon testnet
 4           = ["https://rinkeby.infura.io/v3/fc55ddb25b694fef8e2363f6b6c9341f"] # Etherium (Rinkeby)
@@ -201,7 +203,8 @@ ReloadCycle = 600
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
 2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
 11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
-
+40821       = ["https://mainnet-rpc.fokawa.com"] # Fokawa mainnet
+5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
 
 # MPC config
 [MPC]
