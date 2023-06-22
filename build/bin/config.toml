@@ -173,6 +173,8 @@ ReloadCycle = 600
 11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
 40821       = ["https://mainnet-rpc.fokawa.com"] # Fokawa mainnet
 5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
+4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
+
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
@@ -205,6 +207,8 @@ ReloadCycle = 600
 11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
 40821       = ["https://mainnet-rpc.fokawa.com"] # Fokawa mainnet
 5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
+4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
+
 
 # MPC config
 [MPC]
