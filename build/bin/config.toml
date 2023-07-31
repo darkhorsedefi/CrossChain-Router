@@ -175,6 +175,7 @@ ReloadCycle = 600
 5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
 4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
 8453        = ["https://base.rpc.thirdweb.com"] # Base Mainnet
+59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
@@ -209,6 +210,7 @@ ReloadCycle = 600
 5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
 4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
 8453        = ["https://base.rpc.thirdweb.com"] # Base Mainnet
+59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
 
 # MPC config
 [MPC]
