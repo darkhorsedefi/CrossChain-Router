@@ -176,6 +176,8 @@ ReloadCycle = 600
 4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
 8453        = ["https://base.rpc.thirdweb.com"] # Base Mainnet
 59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
+1229       = ["https://evm.exzo.network/"] #Exzo Network Mainnet
+2370       = ["https://evm-test.exzo.network/"] #Exzo Network Testnet
 
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
@@ -211,6 +213,8 @@ ReloadCycle = 600
 4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
 8453        = ["https://base.rpc.thirdweb.com"] # Base Mainnet
 59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
+1229       = ["https://evm.exzo.network/"] #Exzo Network Mainnet
+2370       = ["https://evm-test.exzo.network/"] #Exzo Network Testnet
 
 # MPC config
 [MPC]
