@@ -179,6 +179,7 @@ ReloadCycle = 600
 1229       = ["https://evm.exzo.network/"] #Exzo Network Mainnet
 2370       = ["https://evm-test.exzo.network/"] #Exzo Network Testnet
 
+
 # GatewaysExt config. key is chainID. used for broadcasting tx
 [GatewaysExt]
 25          = ["https://evm.cronos.org"]                                        # Cronos
@@ -215,6 +216,7 @@ ReloadCycle = 600
 59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
 1229       = ["https://evm.exzo.network/"] #Exzo Network Mainnet
 2370       = ["https://evm-test.exzo.network/"] #Exzo Network Testnet
+
 
 # MPC config
 [MPC]
