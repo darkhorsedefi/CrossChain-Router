@@ -107,7 +107,7 @@ DynamicFeeTxEnabledChains = []
 # enable check tx block hash for security reason
 EnableCheckTxBlockHashChains = ["ALL"]
 # enable check tx block index for security reason
-EnableCheckTxBlockIndexChains = ["ALL"]
+EnableCheckTxBlockIndexChains = ["1666600000", "1313161554", "1", "42161", "100", "96", "180", "97", "77", "80001", "4", "5", "4002", "421611", "10", "42220", "1088", "420420", "2021", "11119", "40821", "5163", "4000", "8453", "59144"]
 # chains don't use fromChainID from receipt log
 DisableUseFromChainIDInReceiptChains = []
 # allow call into router from contract
