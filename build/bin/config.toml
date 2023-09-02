@@ -176,7 +176,7 @@ ReloadCycle = 600
 4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
 8453        = ["https://base.rpc.thirdweb.com"] # Base Mainnet
 59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
-1229       = ["https://evm.exzo.network/"] #Exzo Network Mainnet
+1229       = ["https://evm.exzoscan.io/rpc"] #Exzo Network Mainnet
 2370       = ["https://evm-test.exzo.network/"] #Exzo Network Testnet
 
 
@@ -214,7 +214,7 @@ ReloadCycle = 600
 4000        = ["https://node1.ozonechain.io"] # OzoneChain mainnet
 8453        = ["https://base.rpc.thirdweb.com"] # Base Mainnet
 59144       = ["https://linea-mainnet.infura.io/v3/"] #Linea Mainnet
-1229       = ["https://evm.exzo.network/"] #Exzo Network Mainnet
+1229       = ["https://evm.exzoscan.io/rpc"] #Exzo Network Mainnet
 2370       = ["https://evm-test.exzo.network/"] #Exzo Network Testnet
 
 
