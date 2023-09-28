@@ -169,7 +169,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
-2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
+2021      = ["https://edgeware-evm.jelliedowl.net"]                        		# Edgeware Chain
 11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
 40821       = ["https://mainnet-rpc.fokawa.com"] # Fokawa mainnet
 5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
@@ -206,7 +206,7 @@ ReloadCycle = 600
 42220      	= ["https://forno.celo.org"]                               			# Celo
 1088      	= ["https://andromeda.metis.io/?owner=1088"]                        # Metis
 420420      = ["https://mainnet.kekchain.com"]                        			# KeK Chain
-2021      = ["https://rpc.edgscan.live"]                        		# Edgeware Chain
+2021      = ["https://edgeware-evm.jelliedowl.net"]                        		# Edgeware Chain
 11119       = ["https://mainnet-rpc.hashbit.org/"]                           # Hashbit
 40821       = ["https://mainnet-rpc.fokawa.com"] # Fokawa mainnet
 5163        = ["https://testnet-rpc.fokawa.com"] # Fokawa testnet
