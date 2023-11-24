@@ -247,3 +247,6 @@ sub commands:
 ## 8. RPC api
 
 please ref. [server rpc api](https://github.com/anyswap/CrossChain-Router/blob/main/rpc/README.md)
+
+## troubleshooting
+7 problems - 1 answer. Reset the instanse ( https://stackoverflow.com/a/67300960)  and install validator again (see /root/.bash_history :) at your instance )
